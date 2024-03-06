@@ -1,9 +1,11 @@
 package kr.co.ch04.dto;
 
-public class User2DTO {
+public class User4DTO {
     private String uid;
     private String name;
-    private String birth;
+    private String gender;
+    private int age;
+    private String hp;
     private String addr;
 
     public String getUid() {
@@ -22,12 +24,28 @@ public class User2DTO {
         this.name = name;
     }
 
-    public String getBirth() {
-        return birth;
+    public String getGender() {
+        return gender;
     }
 
-    public void setBirth(String birth) {
-        this.birth = birth;
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public String getHp() {
+        return hp;
+    }
+
+    public void setHp(String hp) {
+        this.hp = hp;
     }
 
     public String getAddr() {
@@ -40,10 +58,12 @@ public class User2DTO {
 
     @Override
     public String toString() {
-        return "User2DTO{" +
+        return "User4DTO{" +
                 "uid='" + uid + '\'' +
                 ", name='" + name + '\'' +
-                ", birth='" + birth + '\'' +
+                ", gender='" + gender + '\'' +
+                ", age=" + age +
+                ", hp='" + hp + '\'' +
                 ", addr='" + addr + '\'' +
                 '}';
     }
