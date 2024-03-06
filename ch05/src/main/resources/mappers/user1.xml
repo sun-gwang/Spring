@@ -1,6 +1,41 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="user1">
+    <!--
+        https://mybatis.org/mybatis-3/getting-started.html
+        Exploring Mapped SQL Statements
+    -->
 
-</beans>
+    <!--
+        - namsespace값은 다른 mapper xml 파일과 구분될 수 있는 식별값을 지정
+        - 보통 해당 mapper xml 파일명으로 지정
+    -->
+
+    <insert id="insertUser1">
+        INSERT INTO `user1` VALUES (#{uid}, #{name}, #{birth}, #{hp}, #{age});
+    </insert>
+
+    <select id="selectUser1s" resultType="kr.co.ch05.dto.User1DTO">
+       SELECT * FROM `user1`;
+    </select>
+
+    <select id="selectUser1" resultType="kr.co.ch05.dto.User1DTO">
+        SELECT * FROM `user1` WHERE `uid` = #{uid};
+    </select>
+
+    <update id="updateUser1">
+        UPDATE `user1` SET
+        `name`=#{name},
+        `birth`=#{birth},
+        `hp`=#{hp},
+        `age`=#{age}
+        WHERE
+        `uid`=#{uid};
+    </update>
+
+    <delete id="deleteUser1">
+        DELETE FROM `user1` WHERE `uid`=#{uid};
+    </delete>
+</mapper>

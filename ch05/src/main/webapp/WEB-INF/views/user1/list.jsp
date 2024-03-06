@@ -3,7 +3,6 @@
 <html>
 <head>
     <title>user1::list</title>
-    <link rel="stylesheet" href="/ch05/css/style.css">
 </head>
 <body>
 <h3>user1 목록</h3>
@@ -20,7 +19,6 @@
         <th>나이</th>
         <th>관리</th>
     </tr>
-
     <c:forEach var="user" items="${users}">
         <tr>
             <td>${user.uid}</td>
