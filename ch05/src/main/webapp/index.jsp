@@ -22,5 +22,9 @@
     <h4>user5 실습</h4>
     <a href="/ch05/user5/list">user5 목록</a>
     <a href="/ch05/user5/register">user5 등록</a>
+
+    <h4>member 실습</h4>
+    <a href="/ch05/member/list">멤버 목록</a>
+    <a href="/ch05/member/register">멤버 등록</a>
 </body>
 </html>
