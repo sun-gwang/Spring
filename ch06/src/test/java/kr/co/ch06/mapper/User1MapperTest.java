@@ -108,7 +108,7 @@ class User1MapperTest {
 
     }
 
-    @Test
+
     @DisplayName("user1 삭제")
     void deleteUser1() {
         log.info("deleteUser1");

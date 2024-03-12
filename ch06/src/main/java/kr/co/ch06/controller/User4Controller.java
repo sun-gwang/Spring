@@ -45,9 +45,12 @@ public class User4Controller {
 
     @PostMapping("/user4/modify")
     public String modify(User4DTO user4DTO){
+
         user4Service.updateUser4(user4DTO);
         return "redirect:/user4/list";
     }
+
+    @GetMapping("/user4/delete")
     public String delete(String uid){
 
         user4Service.deleteUser4(uid);
