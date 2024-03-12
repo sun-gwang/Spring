@@ -4,7 +4,7 @@ import kr.co.ch07.entity.User1;
 import lombok.Builder;
 import lombok.Data;
 
-@Data
+@Data    // 데이터는 빌더 빼고임
 @Builder
 public class User1DTO {
     private String uid;

@@ -12,10 +12,10 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-@Entity                 // 엔티티 객체 정의
-@Table(name = "user1")  // 매핑 테이블 설정
+@Entity                                 // 엔티티 객체 정의
+@Table(name = "user1")        // 매핑 테이블 설정
 public class User1 {
-    @Id                 // pk 컬럼 설정
+    @Id                                   // pk 컬럼 설정
     private String uid;
     @Column(name = "name")  // 매핑 컬럼 설정
     private String name;

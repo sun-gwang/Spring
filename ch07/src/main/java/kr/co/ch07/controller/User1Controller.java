@@ -27,13 +27,12 @@ public class User1Controller {
     }
     @GetMapping("/user1/register")
     public String register(){
-
         return "/user1/register";
     }
     @PostMapping("/user1/register")
     public String register(User1DTO user1DTO){
         user1Service.insertUser1(user1DTO);
-        return "/user1/list";
+        return "redirect:/user1/list";
     }
     @GetMapping("/user1/modify")
     public String modify(String uid, Model model){
