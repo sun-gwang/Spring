@@ -5,7 +5,7 @@
 
 <mapper namespace="kr.co.ch06.mapper.User5Mapper">
 
-    <insert id="insertUser5">
+    <insert id="insertUser5" useGeneratedKeys="true" keyProperty="seq">
         INSERT INTO `user5` (name, gender, age ,addr) VALUES (#{name},#{gender},#{age},#{addr});
     </insert>
 
