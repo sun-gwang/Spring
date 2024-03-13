@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user::login</title>
+</head>
+<body>
+    <a th:href="@{/}">메인</a>
+    <h3>User1 로그인</h3>
+    <form method="post">
+        <input type="text" name="uid">
+        <input type="password" name="pass">
+        <input type="submit" value="로그인">
+    </form>
+    <a th:href="@{/user1/register}">회원가입하기</a>
+</body>
+</html>
