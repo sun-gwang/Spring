@@ -1,12 +1,11 @@
 package kr.co.ch08.dto;
 
 import kr.co.ch08.entity.User;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 
 import java.time.LocalDateTime;
 
-@Data @Builder
+@Getter @Setter @ToString @Builder @AllArgsConstructor @NoArgsConstructor
 public class UserDTO {
 
     private String uid;

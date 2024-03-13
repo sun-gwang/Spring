@@ -1,6 +1,6 @@
 package kr.co.ch08.controller;
 
-import jakarta.servlet.http.HttpSession;
+
 import kr.co.ch08.dto.UserDTO;
 import kr.co.ch08.service.UserService;
 import lombok.RequiredArgsConstructor;
@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 
 @Slf4j @RequiredArgsConstructor @Controller
 @SessionAttributes("sessUser")
@@ -28,11 +29,10 @@ public class User3Controller {
         if(user!= null){
             // 어노테이션으로 선언된 session 객체 (sessUser) 참조
             model.addAttribute("sessUser", user);
-            return "";
+            return "redirect:/user3/success";
         }else{
-            return "";
+            return "redirect:/user3/login?success=100";
         }
-
     }
 
     @GetMapping("/user3/success")
@@ -41,10 +41,10 @@ public class User3Controller {
     }
 
     @GetMapping("/user3/logout")
-    public String logout(HttpSession session){
+    public String logout(SessionStatus status){
 
         // @sessionAttribute로 설정한 세션 해제
-
+        status.setComplete();
         return "redirect:/user3/login?success=200";
     }
 }

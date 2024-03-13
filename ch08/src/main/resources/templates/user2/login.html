@@ -10,8 +10,8 @@
 
     <!-- session 방식 인증 처리-->
     <form th:action="@{/user2/login}" method="post">
-        <input type="text" name="uid">
-        <input type="password" name="pass">
+        <input type="text" name="uid"><br>
+        <input type="password" name="pass"><br>
         <input type="submit" value="로그인">
     </form>
     <a th:href="@{/user1/register}">회원가입하기</a>

@@ -30,12 +30,10 @@ public class User2Controller {
         log.info(" "+user);
 
         if(user != null){
-            log.info("here");
             // 회원이 맞을 경우 세션 저장
             session.setAttribute("sessUser",user);
-
-            log.info("here2");
             return "redirect:/user2/success";
+
         }else {
             // 회원이 아닌 경우
             log.info("here3");
@@ -49,16 +47,17 @@ public class User2Controller {
         UserDTO sessUser = (UserDTO) session.getAttribute("sessUser");
         // 쿠키 생성
         Cookie cookie = new Cookie("username", sessUser.getUid());
-        cookie.setMaxAge(3600);
-        cookie.setPath("/");
+        cookie.setMaxAge(3600); // 3분
+        cookie.setPath("/");         // 쿠키 경로
         resp.addCookie(cookie);
-        return "/user2/result";
+        return "/user2/success";
     }
 
     @GetMapping("/user2/result")
     public String result(@CookieValue("JSESSIONID") String jsessionid,
-                         @CookieValue("username") String username,Model model){
+                         @CookieValue("username") String username, Model model){
         log.info(" "+username);
+        model.addAttribute("jsessionid", jsessionid);
         model.addAttribute("username", username);
         return "/user2/result";
     }
@@ -69,6 +68,6 @@ public class User2Controller {
         session.removeAttribute("sessUser");
         session.invalidate();
 
-        return "redirect:/user2/logout?success";
+        return "redirect:/user2/logout?success=200";
     }
 }

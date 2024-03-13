@@ -31,7 +31,11 @@ public class SecurityConfig {
 
 
 
-        // 인가 설정
+         /*
+            인가 설정
+             - Spring Security는 존재하지 않는 요청 주소에 대해 기본적으로 login 페이지로 redirect를 수행
+             - 자원 요청의 추가 인가 처리 확장과 redirect 기본 해제를 위해 마지막에 .anyRequest().permitAll() 설정
+         */
         httpSecurity.authorizeHttpRequests(authorize -> authorize
                 .requestMatchers("/").permitAll()
                 .requestMatchers("/admin/**").hasAuthority("ADMIN")

@@ -11,10 +11,14 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Optional;
 
-@Service @AllArgsConstructor @Slf4j
+@Slf4j
+@AllArgsConstructor
+@Service
 public class UserService {
+
     private final UserRepository repository;
     private final PasswordEncoder passwordEncoder;
+
 
     public void insertUser(UserDTO userDTO){
         // 비밀번호 평문을 시큐리티 인코더로 암호화
@@ -26,9 +30,12 @@ public class UserService {
     }
 
     public UserDTO selectUser(UserDTO userDTO) {
+
         Optional<User> result = repository.findById(userDTO.getUid());
 
         if (!result.isEmpty()) {
+            // 사용자가 존재하면
+
             User user = result.get();
 
             // 비밀번호 검증
@@ -42,7 +49,13 @@ public class UserService {
     public List<UserDTO> selectUsers(){
         return null;
     }
-    public void updateUser(UserDTO userDTO){}
-    public void deleteUser(String uid){}
+
+    public void updateUser(UserDTO userDTO){
+
+    }
+
+    public void deleteUser(String uid){
+
+    }
 
 }
