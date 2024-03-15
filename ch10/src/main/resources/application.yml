@@ -1,0 +1,42 @@
+server:
+    port: 8080
+    servlet:
+        context-path: /ch10
+
+spring:
+    application:
+        name: ch10
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: abcd1234
+        url: jdbc:mysql://127.0.0.1:3306/studydb
+        username: kc5353
+    devtools:
+        livereload:
+            enabled: true
+    jpa:
+        database: mysql
+        hibernate:
+            ddl-auto: update
+            naming:
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        properties:
+            hibernate:
+                format_sql: true
+                show_sql: true
+
+    logging:
+        file:
+            name: logs/ch10.log
+        level:
+            jdbc:
+                connection: info
+                resultsettable: info
+                sqlonly: info
+                sqltiming: info
+            root: info
+
+
+jwt:
+    issuer: kkj80911@gmail.com
+    secret: i9IRfpZMBT0Wvcs1p35alIvMbCFJQH7S
