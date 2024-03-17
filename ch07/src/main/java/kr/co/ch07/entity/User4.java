@@ -16,12 +16,14 @@ public class User4 {
     private String gender;
     private int age;
     private String hp;
+    private String addr;
 
     public User4DTO toDTO(){
         return User4DTO.builder().uid(uid)
                 .name(name)
                 .gender(gender)
                 .age(age)
-                .hp(hp).build();
+                .hp(hp)
+                .addr(addr).build();
     }
 }

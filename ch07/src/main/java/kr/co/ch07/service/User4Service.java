@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Slf4j @Service @AllArgsConstructor
 public class User4Service {
@@ -27,9 +28,24 @@ public class User4Service {
         return user4.toDTO();
     }
     public List<User4DTO> selectUser4s(){
-        return null;
+        List<User4> user4s = repository.findAll();
+
+        List<User4DTO> user4DTOS = user4s.stream()
+                .map(entity -> User4DTO.builder()
+                        .uid(entity.getUid())
+                        .name(entity.getName())
+                        .gender(entity.getGender())
+                        .age(entity.getAge())
+                        .hp(entity.getHp())
+                        .addr(entity.getAddr()).build())
+                        .collect(Collectors.toList());
+
+        return user4DTOS;
     }
-    public void updateUser4(User4DTO user4DTO){}
+    public void updateUser4(User4DTO user4DTO){
+        User4 user4 = user4DTO.toEntity();
+        repository.save(user4);
+    }
 
     public void deleteUser4(String uid){
         repository.deleteById(uid);
