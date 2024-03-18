@@ -1,8 +1,8 @@
-package kr.co.ch09.security;
+package kr.co.sboard.security;
 
-import kr.co.ch09.entity.User;
-import kr.co.ch09.repository.UserRepository;
-import lombok.AllArgsConstructor;
+import kr.co.sboard.entity.User;
+import kr.co.sboard.repository.UserRepository;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -11,7 +11,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-@Service @Slf4j @AllArgsConstructor
+@Slf4j
+@RequiredArgsConstructor
+@Service
 public class SecurityUserService implements UserDetailsService {
 
     private final UserRepository userRepository;
@@ -20,13 +22,16 @@ public class SecurityUserService implements UserDetailsService {
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 
         Optional<User> result = userRepository.findById(username);
+
         UserDetails userDetails = null;
 
         if(!result.isEmpty()){
             // 해당하는 사용자가 존재하면 인증 객체 생성
-            userDetails = MyUserDetails.builder().user(result.get()).build();
+            userDetails = MyUserDetails.builder()
+                                        .user(result.get())
+                                        .build();
         }
-        
+
         // Security ContextHolder 저장
         return userDetails;
     }
