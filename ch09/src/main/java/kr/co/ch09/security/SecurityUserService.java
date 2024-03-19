@@ -1,4 +1,4 @@
-package kr.co.sboard.security;
+package kr.co.ch09.security;
 
 import kr.co.ch09.entity.User;
 import kr.co.ch09.repository.UserRepository;

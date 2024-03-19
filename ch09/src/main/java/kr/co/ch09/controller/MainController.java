@@ -28,4 +28,20 @@ public class MainController {
     public String user1Modify(){
         return "/user1/modify";
     }
+
+    @GetMapping("/user2/list")
+    public String user2List(){
+        return "/user2/list";
+    }
+
+    @GetMapping("/user2/register")
+    public String user2Register(){
+        return "/user2/register";
+    }
+
+    @GetMapping("/user2/modify")
+    public String user2Modify() {
+        return "/user2/modify";
+    }
+
 }
