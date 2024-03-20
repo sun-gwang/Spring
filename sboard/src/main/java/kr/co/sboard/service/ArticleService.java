@@ -74,7 +74,7 @@ public class ArticleService {
         // 파일 첨부 처리
         List<FileDTO> files = fileService.fileUpload(articleDTO);
 
-        // 파일 첨부 갯수 초기화
+        // 파일 첨부 갯수 초기화 -> 갯수만큼 article테이블의 file컬럼에 저장
         articleDTO.setFile(files.size());
 
         // articleDTO를 articleEntity로 변환
@@ -93,6 +93,7 @@ public class ArticleService {
             // 여기서 에러 발생, RootConfig 파일에 ModelMapper 설정에 추가--> .setMatchingStrategy(MatchingStrategies.STRICT)
             File file = modelMapper.map(fileDTO, File.class);
 
+            // insertFile
             fileRepository.save(file);
         }
     }

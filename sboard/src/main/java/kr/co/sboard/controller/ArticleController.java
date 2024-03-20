@@ -5,10 +5,12 @@ import kr.co.sboard.dto.ArticleDTO;
 import kr.co.sboard.dto.PageRequestDTO;
 import kr.co.sboard.dto.PageResponseDTO;
 import kr.co.sboard.service.ArticleService;
+import kr.co.sboard.service.FileService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +26,7 @@ public class ArticleController {
     */
 
     private final ArticleService articleService;
-
+    private final FileService fileService;
 
     @GetMapping("/article/list")
     public String list(Model model, PageRequestDTO pageRequestDTO){
@@ -66,5 +68,11 @@ public class ArticleController {
         model.addAttribute(articleDTO);
 
         return "/article/view";
+    }
+
+
+    @GetMapping("/article/fileDownload")
+    public ResponseEntity<?> fileDownload(int fno){
+        return fileService.fileDownload(fno);
     }
 }

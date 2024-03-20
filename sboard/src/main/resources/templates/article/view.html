@@ -35,9 +35,9 @@
                     <label for="exampleFormControlInput1" class="form-label">첨부파일</label>
                     <ul class="list-group">
 
-                        <li class="list-group-item d-flex justify-content-between align-items-center">
-                            <span>2022년 매출현황.xls</span>
-                            <span class="badge text-bg-primary rounded-pill">14</span>
+                        <li th:each="file:${articleDTO.fileList}" class="list-group-item d-flex justify-content-between align-items-center">
+                            <a th:href="@{/article/fileDownload(fno=${file.fno})}">$[[${file.oName}]]</a>
+                            <span class="badge text-bg-primary rounded-pill">[[${file.download}]]</span>
                         </li>
 
                     </ul>
