@@ -2,14 +2,16 @@ package kr.co.sboard.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import kr.co.sboard.dto.ArticleDTO;
+import kr.co.sboard.dto.PageRequestDTO;
+import kr.co.sboard.dto.PageResponseDTO;
 import kr.co.sboard.service.ArticleService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -25,7 +27,12 @@ public class ArticleController {
 
 
     @GetMapping("/article/list")
-    public String list(@ModelAttribute("cate") String cate, Model model){
+    public String list(Model model, PageRequestDTO pageRequestDTO){
+
+        PageResponseDTO pageResponseDTO = articleService.findByParentAndCate(pageRequestDTO);
+        log.info("pageResponseDTO" + pageResponseDTO);
+
+        model.addAttribute(pageResponseDTO);
 
         return "/article/list";
     }
@@ -52,4 +59,12 @@ public class ArticleController {
         return "redirect:/article/list";
     }
 
+    @GetMapping("/article/view")
+    public String view(int no, Model model){
+
+        ArticleDTO articleDTO = articleService.findById(no);
+        model.addAttribute(articleDTO);
+
+        return "/article/view";
+    }
 }
