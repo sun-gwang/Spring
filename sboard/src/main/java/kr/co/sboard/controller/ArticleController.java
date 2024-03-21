@@ -26,7 +26,6 @@ public class ArticleController {
     */
 
     private final ArticleService articleService;
-    private final FileService fileService;
 
     @GetMapping("/article/list")
     public String list(Model model, PageRequestDTO pageRequestDTO){
@@ -38,7 +37,6 @@ public class ArticleController {
 
         return "/article/list";
     }
-
 
     @GetMapping("/article/write")
     public String write(@ModelAttribute("cate") String cate){
@@ -71,8 +69,4 @@ public class ArticleController {
     }
 
 
-    @GetMapping("/article/fileDownload")
-    public ResponseEntity<?> fileDownload(int fno){
-        return fileService.fileDownload(fno);
-    }
 }

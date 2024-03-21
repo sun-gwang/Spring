@@ -23,8 +23,4 @@ public class RootConfig {
         return modelMapper;
     }
 
-    @Bean
-    public AppInfo appInfo(){
-        return new AppInfo();
-    }
 }
