@@ -111,13 +111,13 @@ function confirmModal(message){
     return new Promise(resolve => {
         // 확인 버튼 클릭 시
         document.getElementById('btnOk').onclick = function() {
-            modal.hide(); // 모달 닫기
+            resultModal.hide(); // 모달 닫기
             resolve(true); // 확인 결과값 반환
         };
 
         // 취소 버튼 클릭 시
         document.getElementById('btnCancel').onclick = function() {
-            modal.hide(); // 모달 닫기
+            resultModal.hide(); // 모달 닫기
             resolve(false); // 취소 결과값 반환
         };
     });
