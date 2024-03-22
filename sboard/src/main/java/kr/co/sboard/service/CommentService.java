@@ -40,6 +40,26 @@ public class CommentService {
         return ResponseEntity.ok().body(articleDTOS);
     }
 
+    public ResponseEntity<?> updateComment(ArticleDTO articleDTO){
+
+        Optional<Article> optArticle = articleRepository.findById(articleDTO.getNo());
+
+        if(optArticle.isPresent()){
+            Article article = optArticle.get();
+
+            article.setContent(articleDTO.getContent());
+
+            log.info("article : " + article);
+
+            Article modifiedArticle = articleRepository.save(article);
+            
+            // 수정 후 수정 데이터 반환
+            return ResponseEntity.status(HttpStatus.OK).body(modifiedArticle);
+        }else{
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("not found");
+        }
+
+    }
     public ResponseEntity<?> deleteComment(int no){
 
         Optional<Article> optArticle = articleRepository.findById(no);

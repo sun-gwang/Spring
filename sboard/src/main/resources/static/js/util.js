@@ -73,11 +73,12 @@ async function fetchDelete(url){
 
 // fetch PUT용
 async function fetchPut(url, jsonData){
+
     try{
         const response = await fetch(url, {
-            method:'PUT',
+            method: 'PUT',
             headers: {"Content-type":"application/json"},
-            body:JSON.stringify(jsonData)
+            body: JSON.stringify(jsonData)
         });
 
         if(!response.ok){
@@ -85,11 +86,12 @@ async function fetchPut(url, jsonData){
         }
 
         const data = await response.json();
-        console.log("data1 : " +data);
+        console.log("data1 : " + data);
 
         return data;
+
     }catch (err) {
-        console.log(err);
+        console.log(err)
     }
 }
 

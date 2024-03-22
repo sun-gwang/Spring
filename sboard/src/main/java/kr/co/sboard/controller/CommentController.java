@@ -31,8 +31,17 @@ public class CommentController {
         return commentService.insertComment(articleDTO);
     }
 
+    @PutMapping("/comment")
+    public ResponseEntity<?> putComment(@RequestBody ArticleDTO articleDTO, HttpServletRequest req){
+
+
+        return commentService.updateComment(articleDTO);
+    }
+
+
     @DeleteMapping("/comment/{no}")
     public ResponseEntity<?> delete(@PathVariable("no") int no){
         return commentService.deleteComment(no);
     }
+
 }

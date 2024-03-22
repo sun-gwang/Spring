@@ -1,6 +1,6 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="/layout/defaultLayout.html">
+      layout:decorate="~{/layout/defaultLayout.html}">
 
 <div class="container-fluid px-4" layout:fragment="content">
     <script th:inline="javascript">
@@ -46,12 +46,10 @@
                                                     <textarea class="form-control" rows="3" readonly>${comment.content}</textarea>
                                                     <div class="text-end mt-1">
                                                         <button type="button" class="btn btn-warning btn-sm btnModify" data-mode="modify" data-no="${comment.no}">
-                                                            <i class="bi bi-pencil-square"></i>
-                                                            수정
+                                                            <i class="bi bi-pencil-square">수정</i>
                                                         </button>
                                                         <button type="button" class="btn btn-danger btn-sm btnRemove" data-mode="remove" data-no="${comment.no}">
-                                                            <i class="bi bi-trash2-fill"></i>
-                                                            삭제
+                                                            <i class="bi bi-trash2-fill">삭제</i>
                                                         </button>
                                                     </div>
                                             </div>`;
@@ -96,12 +94,43 @@
                     textarea.focus();
                     textarea.setSelectionRange(textarea.value.length, textarea.value.length)
 
-                    btnModify.innerText = "수정"
+                    btnModify.innerText = "확인";
                     btnModify.dataset.mode = 'update';
 
-                    btnRemove.innerText = "취소"
+                    btnRemove.innerText = "취소";
                     btnRemove.dataset.mode = 'cancel';
 
+                }else if(e.target.dataset.mode == 'cancel'){
+                    //alertModal('취소!');
+                    const comment = e.target.closest('.comment');
+                    const textarea = comment.getElementsByTagName('textarea')[0];
+                    const btnModify = comment.getElementsByClassName('btnModify')[0];
+                    const btnRemove = comment.getElementsByClassName('btnRemove')[0];
+
+                    textarea.readOnly = true;
+                    textarea.style.outline = 'none';
+                    btnModify.dataset.mode = 'modify';
+                    btnRemove.innerText = "삭제";
+                    btnRemove.dataset.mode = 'remove';
+
+                }else if(e.target.dataset.mode == 'update'){
+                    const comment = e.target.closest('.comment');
+                    const textarea = comment.getElementsByTagName('textarea')[0];
+                    const no = comment.dataset.no;
+
+                    const jsonData = {
+                        "no" : no,
+                        "content" : textarea.value
+                    }
+
+                    console.log(jsonData);
+
+                    // PUT용 fetch 함수
+                    const data = fetchPut(`/sboard/comment`, jsonData);
+
+                    console.log(data);
+
+                    alertModal('수정되었습니다!');
                 }
 
 
@@ -137,8 +166,12 @@
 
                                             <textarea class="form-control" rows="3" readonly>${data.content}</textarea>
                                             <div class="text-end mt-1">
-                                                <button type="button" class="btn btn-warning btn-sm">수정</button>
-                                                <button type="button" class="btn btn-danger btn-sm">삭제</button>
+                                                <button type="button" class="btn btn-warning btn-sm">
+                                                    <i class="bi bi-pencil-square">수정</i>
+                                                </button>
+                                                <button type="button" class="btn btn-danger btn-sm">
+                                                    <i class="bi bi-trash2-fill">삭제</i>
+                                                </button>
                                             </div>
 
                                         </div>`

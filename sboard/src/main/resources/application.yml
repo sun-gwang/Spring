@@ -22,7 +22,7 @@ spring:
         name: sboard
     datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
-        password: abcd1234
+        password: Abcd!1234
         url: jdbc:mysql://127.0.0.1:3306/jboard
         username: kc5353
     devtools:
@@ -30,8 +30,12 @@ spring:
             enabled: true
         restart:
              enabled: false
+    thymeleaf:
+        prefix: classpath:/templates
 
- # 이메일 설정
+
+
+    # 이메일 설정
     mail:
         host: smtp.gmail.com
         port: 587
@@ -61,6 +65,8 @@ spring:
       multipart:
         location: uploads/
         max-file-size: 10MB
+
+
 
 
 # 파일 업로드 설정
