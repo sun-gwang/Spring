@@ -48,6 +48,16 @@ public class UserController {
         return "/user/register";
     }
 
+    @GetMapping("/user/findId")
+    public String findId(){
+        return "/user/findId";
+    }
+
+    @GetMapping("/user/findPassword")
+    public String findPassword(){
+        return "/user/findPassword";
+    }
+
     @PostMapping("/user/register")
     public String register(HttpServletRequest req, UserDTO userDTO){
 

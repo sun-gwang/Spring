@@ -4,6 +4,7 @@ async function fetchGet(url){
     console.log("fetchData1...1");
     try{
         console.log("fetchData1...2");
+        // 지정된 URL에서 데이터를 가져오기 위해 fetch 메서드 호출(Promise를 반환)
         const response = await fetch(url);
         console.log("here1");
 

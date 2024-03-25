@@ -8,6 +8,7 @@ import kr.co.sboard.service.ArticleService;
 import kr.co.sboard.service.FileService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.Banner;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
@@ -68,5 +69,24 @@ public class ArticleController {
         return "/article/view";
     }
 
+
+    @GetMapping("/article/modify")
+    public String articleModify(int no) {
+        return "/article/modify";
+    }
+
+    /*
+    @GetMapping("/article/{no}")
+    public ArticleDTO modify(@PathVariable("no") int no){
+        ArticleDTO articleDTO = articleService.selectArticle(no);
+        return articleDTO;
+    }
+     */
+
+
+    @DeleteMapping("/article/{no}")
+    public ResponseEntity<?> deleteArticle(@PathVariable("no") int no){
+        return articleService.deleteArticle(no);
+    }
 
 }

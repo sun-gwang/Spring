@@ -178,7 +178,30 @@
 
                 // 태그 문자열 삽입
                 commentList.insertAdjacentHTML('beforeend', commentArticle);
+
+
             }
+
+
+            const btn_Modify = document.getElementById('btn_Modify');
+            const btn_Delete = document.getElementById('btn_Delete');
+
+            btn_Modify.onclick = function (e){
+                e.preventDefault();
+
+                location.href = `/sboard/article/modify?no=${no}`;
+
+            }
+
+            btn_Delete.onclick = function (e){
+                e.preventDefault();
+                const data = fetchDelete(`/sboard/article/${no}`);
+                console.log(data);
+                if(data != null){
+                    alertModal('삭제되었습니다!');
+                }
+            }
+
         }
     </script>
 
@@ -215,6 +238,17 @@
                 <div class="mb-3">
                     <label for="exampleFormControlTextarea1" class="form-label">글내용</label>
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" readonly name="content">[[${articleDTO.content}]]</textarea>
+                </div>
+
+                <div class="text-end">
+                    <button type="button" class="btn btn-success btn_Modify" id="btn_Modify">
+                        <i class="bi bi-pencil-square"></i>
+                        수정
+                    </button>
+                    <button type="button" class="btn btn-secondary btn_Delete" id="btn_Delete">
+                        <i class="bi bi-trash2-fill"></i>
+                        삭제
+                    </button>
                 </div>
             </form>
 
