@@ -1,0 +1,82 @@
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{/layout/defaultLayout.html}">
+
+<div class="container-fluid px-4" layout:fragment="content">
+
+    <script>
+        window.onload = async function (){
+
+            // 파라미터 값 가져오기
+            const url = location.href;
+            const no = url.split('=')[1];
+            console.log(no);
+
+            // 수정 데이터 요청
+            const data = await fetchGet(`/sboard/article/${no}`);
+            console.log(data);
+
+            const formModify = document.formModify;
+            formModify.title.value = data.title;
+            formModify.content.value = data.content;
+
+
+            // 수정 요청
+            const btnModify = document.getElementById('btnModify');
+
+            btnModify.onclick = async function (e){
+                const formModify = document.formModify;
+
+                e.preventDefault();
+
+                const jsonData = {
+                    "title":formModify.title.value,
+                    "content":formModify.content.value,
+                    "writer" :formModify.writer.value
+                };
+
+                console.log(jsonData);
+               const data = await fetchPut('/sboard/article',jsonData);
+               console.log(data);
+
+               if(data != null){
+                   alertModal('수정되었습니다');
+                   location.href = `/sboard/article/view?no=${no}`;
+               }
+            }
+
+        }
+    </script>
+    <h1 class="mt-4">글 수정</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item active">게시판 글수정</li>
+    </ol>
+
+    <!-- 내용 시작 -->
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-table me-1"></i>
+            000번 글 수정
+        </div>
+        <div class="card-body">
+            <form name="formModify" method="post">
+                <input type="hidden" name="writer" th:value="${#authentication.principal.user.uid}">
+                <div class="mb-3">
+                    <label for="exampleFormControlInput1" class="form-label">글 제목</label>
+                    <input type="text" class="form-control" id="exampleFormControlInput1" name="title">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">글 내용</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="10" name="content"></textarea>
+                </div>
+
+            </form>
+        </div>
+    </div>
+    <div class="text-end">
+        <a th:href="@{/article/list}" class="btn btn-success btn_Modify">취소</a>
+        <a th:href="@{#}" class="btn btn-secondary btn_Delete" id="btnModify">수정</a>
+    </div>
+    <!-- 내용 끝 -->
+</div>
+</html>

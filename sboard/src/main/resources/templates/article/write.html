@@ -1,6 +1,6 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="/layout/defaultLayout.html">
+      layout:decorate="~{/layout/defaultLayout.html}">
 
 <div class="container-fluid px-4" layout:fragment="content">
 
@@ -23,7 +23,7 @@
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            000 글쓰기
+            [[${boardName}]] 글쓰기
         </div>
         <div class="card-body">
             <form name="formWrite" th:action="@{/article/write}" method="post" enctype="multipart/form-data">

@@ -17,7 +17,7 @@ import java.time.LocalDateTime;
 @Table(name="shop_customer")
 public class Customer {
     @Id
-    private String custid;
+    private String custId;
     private String name;
     private int age;
     private String hp;

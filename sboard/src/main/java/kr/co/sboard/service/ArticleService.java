@@ -14,6 +14,8 @@ import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -98,5 +100,35 @@ public class ArticleService {
         }
     }
 
+    public ResponseEntity<?> deleteArticle(int no){
+        Optional<Article> optArticle = articleRepository.findById(no);
+        log.info("optArticle: " + optArticle);
 
+        if(optArticle.isPresent()){
+            log.info("here ok");
+            articleRepository.deleteById(no);
+            return ResponseEntity.ok().body(optArticle.get());
+        }else{
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("user not found");
+        }
+    }
+
+    public ArticleDTO selectArticle(int no){
+        Optional<Article> result = articleRepository.findById(no);
+        ArticleDTO articleDTO = modelMapper.map(result, ArticleDTO.class);
+
+        return articleDTO;
+    }
+
+    public ArticleDTO updateArticle(ArticleDTO articleDTO){
+        
+        // 수정
+        Article article = modelMapper.map(articleDTO, Article.class);
+        articleRepository.save(article);
+
+        Optional<Article> result = articleRepository.findById(articleDTO.getNo());
+        articleDTO = modelMapper.map(result, ArticleDTO.class);
+        return articleDTO;
+    }
+    
 }

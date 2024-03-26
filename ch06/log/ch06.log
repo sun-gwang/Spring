@@ -664,3 +664,205 @@ java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '' for key 'u
 2024-03-12T13:43:44.740+09:00  INFO 14248 --- [main] kr.co.ch06.mapper.User2MapperTest        : updateUser2()...
 2024-03-12T13:43:44.759+09:00  INFO 14248 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-03-12T13:43:44.763+09:00  INFO 14248 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-12T21:52:56.319+09:00  INFO 14736 --- [main] kr.co.ch06.mapper.User3MapperTest        : Starting User3MapperTest using Java 21.0.2 with PID 14736 (started by ksgg1 in C:\Users\ksgg1\OneDrive\바탕 화면\Workspace\Spring\ch06)
+2024-03-12T21:52:56.320+09:00  INFO 14736 --- [main] kr.co.ch06.mapper.User3MapperTest        : No active profile set, falling back to 1 default profile: "default"
+2024-03-12T21:52:58.201+09:00  INFO 14736 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-03-12T21:52:58.662+09:00  INFO 14736 --- [main] kr.co.ch06.mapper.User3MapperTest        : Started User3MapperTest in 2.685 seconds (process running for 3.598)
+2024-03-12T21:52:59.374+09:00  INFO 14736 --- [main] kr.co.ch06.mapper.User3MapperTest        : insertUser3()...
+2024-03-12T21:52:59.401+09:00  INFO 14736 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-12T21:52:59.841+09:00  INFO 14736 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7e0883f3
+2024-03-12T21:52:59.846+09:00  INFO 14736 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-12T21:52:59.921+09:00  INFO 14736 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-12T21:52:59.927+09:00  INFO 14736 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-12T21:54:10.100+09:00  INFO 18720 --- [main] kr.co.ch06.mapper.User3MapperTest        : Starting User3MapperTest using Java 21.0.2 with PID 18720 (started by ksgg1 in C:\Users\ksgg1\OneDrive\바탕 화면\Workspace\Spring\ch06)
+2024-03-12T21:54:10.101+09:00  INFO 18720 --- [main] kr.co.ch06.mapper.User3MapperTest        : No active profile set, falling back to 1 default profile: "default"
+2024-03-12T21:54:11.511+09:00  INFO 18720 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-03-12T21:54:11.924+09:00  INFO 18720 --- [main] kr.co.ch06.mapper.User3MapperTest        : Started User3MapperTest in 2.132 seconds (process running for 2.943)
+2024-03-12T21:54:12.649+09:00  INFO 18720 --- [main] kr.co.ch06.mapper.User3MapperTest        : insertUser3()...
+2024-03-12T21:54:12.661+09:00  INFO 18720 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-12T21:54:12.950+09:00  INFO 18720 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@626df173
+2024-03-12T21:54:12.953+09:00  INFO 18720 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-12T21:54:13.162+09:00  INFO 18720 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-12T21:54:13.171+09:00  INFO 18720 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-12T21:54:41.016+09:00  INFO 12352 --- [main] kr.co.ch06.mapper.User3MapperTest        : Starting User3MapperTest using Java 21.0.2 with PID 12352 (started by ksgg1 in C:\Users\ksgg1\OneDrive\바탕 화면\Workspace\Spring\ch06)
+2024-03-12T21:54:41.017+09:00  INFO 12352 --- [main] kr.co.ch06.mapper.User3MapperTest        : No active profile set, falling back to 1 default profile: "default"
+2024-03-12T21:54:42.404+09:00  INFO 12352 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-03-12T21:54:42.826+09:00  INFO 12352 --- [main] kr.co.ch06.mapper.User3MapperTest        : Started User3MapperTest in 2.057 seconds (process running for 2.788)
+2024-03-12T21:54:43.593+09:00  INFO 12352 --- [main] kr.co.ch06.mapper.User3MapperTest        : insertUser3()...
+2024-03-12T21:54:43.606+09:00  INFO 12352 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-12T21:54:43.962+09:00  INFO 12352 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@194e78af
+2024-03-12T21:54:43.964+09:00  INFO 12352 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-12T21:54:43.983+09:00  INFO 12352 --- [main] kr.co.ch06.mapper.User3MapperTest        : kr.co.ch06.dto.User3DTO@3458dab6
+2024-03-12T21:54:44.014+09:00  INFO 12352 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-12T21:54:44.019+09:00  INFO 12352 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-12T21:58:02.236+09:00  INFO 14116 --- [main] kr.co.ch06.mapper.User3MapperTest        : Starting User3MapperTest using Java 21.0.2 with PID 14116 (started by ksgg1 in C:\Users\ksgg1\OneDrive\바탕 화면\Workspace\Spring\ch06)
+2024-03-12T21:58:02.237+09:00  INFO 14116 --- [main] kr.co.ch06.mapper.User3MapperTest        : No active profile set, falling back to 1 default profile: "default"
+2024-03-12T21:58:03.687+09:00  INFO 14116 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-03-12T21:58:04.208+09:00  INFO 14116 --- [main] kr.co.ch06.mapper.User3MapperTest        : Started User3MapperTest in 2.266 seconds (process running for 3.052)
+2024-03-12T21:58:04.991+09:00  INFO 14116 --- [main] kr.co.ch06.mapper.User3MapperTest        : selectUser3()...
+2024-03-12T21:58:05.004+09:00  INFO 14116 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-12T21:58:05.290+09:00  INFO 14116 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5d22ed6c
+2024-03-12T21:58:05.293+09:00  INFO 14116 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-12T21:58:05.361+09:00  INFO 14116 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-12T21:58:05.365+09:00  INFO 14116 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-12T22:00:50.857+09:00  INFO 16732 --- [main] kr.co.ch06.mapper.User3MapperTest        : Starting User3MapperTest using Java 21.0.2 with PID 16732 (started by ksgg1 in C:\Users\ksgg1\OneDrive\바탕 화면\Workspace\Spring\ch06)
+2024-03-12T22:00:50.859+09:00  INFO 16732 --- [main] kr.co.ch06.mapper.User3MapperTest        : No active profile set, falling back to 1 default profile: "default"
+2024-03-12T22:00:52.264+09:00  INFO 16732 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-03-12T22:00:52.724+09:00  INFO 16732 --- [main] kr.co.ch06.mapper.User3MapperTest        : Started User3MapperTest in 2.134 seconds (process running for 2.867)
+2024-03-12T22:00:53.494+09:00  INFO 16732 --- [main] kr.co.ch06.mapper.User3MapperTest        : selectUser3s()...
+2024-03-12T22:00:53.509+09:00  INFO 16732 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-12T22:00:53.823+09:00  INFO 16732 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@7028b5cc
+2024-03-12T22:00:53.826+09:00  INFO 16732 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-12T22:00:53.879+09:00  INFO 16732 --- [main] kr.co.ch06.mapper.User3MapperTest        : kr.co.ch06.dto.User3DTO@58b03029
+2024-03-12T22:00:53.880+09:00  INFO 16732 --- [main] kr.co.ch06.mapper.User3MapperTest        : kr.co.ch06.dto.User3DTO@539dd2d0
+2024-03-12T22:00:53.880+09:00  INFO 16732 --- [main] kr.co.ch06.mapper.User3MapperTest        : kr.co.ch06.dto.User3DTO@3428420d
+2024-03-12T22:00:53.880+09:00  INFO 16732 --- [main] kr.co.ch06.mapper.User3MapperTest        : kr.co.ch06.dto.User3DTO@523ade68
+2024-03-12T22:00:53.880+09:00  INFO 16732 --- [main] kr.co.ch06.mapper.User3MapperTest        : kr.co.ch06.dto.User3DTO@b529d7e
+2024-03-12T22:00:53.880+09:00  INFO 16732 --- [main] kr.co.ch06.mapper.User3MapperTest        : kr.co.ch06.dto.User3DTO@3664c596
+2024-03-12T22:00:53.904+09:00  INFO 16732 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-12T22:00:53.908+09:00  INFO 16732 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-12T22:01:24.993+09:00  INFO 7264 --- [main] kr.co.ch06.mapper.User3MapperTest        : Starting User3MapperTest using Java 21.0.2 with PID 7264 (started by ksgg1 in C:\Users\ksgg1\OneDrive\바탕 화면\Workspace\Spring\ch06)
+2024-03-12T22:01:24.994+09:00  INFO 7264 --- [main] kr.co.ch06.mapper.User3MapperTest        : No active profile set, falling back to 1 default profile: "default"
+2024-03-12T22:01:26.481+09:00  INFO 7264 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-03-12T22:01:26.966+09:00  INFO 7264 --- [main] kr.co.ch06.mapper.User3MapperTest        : Started User3MapperTest in 2.222 seconds (process running for 3.038)
+2024-03-12T22:01:27.726+09:00  INFO 7264 --- [main] kr.co.ch06.mapper.User3MapperTest        : selectUser3s()...
+2024-03-12T22:01:27.743+09:00  INFO 7264 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-12T22:01:28.101+09:00  INFO 7264 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@669580e2
+2024-03-12T22:01:28.102+09:00  INFO 7264 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-12T22:01:28.145+09:00  INFO 7264 --- [main] kr.co.ch06.mapper.User3MapperTest        : User3DTO(uid=A101, name=김유신, birth=1968-05-09, hp=010-1234-1111, addr=경남 김해시)
+2024-03-12T22:01:28.145+09:00  INFO 7264 --- [main] kr.co.ch06.mapper.User3MapperTest        : User3DTO(uid=A102, name=김춘추, birth=1972-11-23, hp=010-1234-2222, addr=경남 경주시)
+2024-03-12T22:01:28.145+09:00  INFO 7264 --- [main] kr.co.ch06.mapper.User3MapperTest        : User3DTO(uid=A103, name=장보고, birth=1978-03-01, hp=010-1234-3333, addr=전남 완도군)
+2024-03-12T22:01:28.145+09:00  INFO 7264 --- [main] kr.co.ch06.mapper.User3MapperTest        : User3DTO(uid=A104, name=강감찬, birth=1979-08-16, hp=010-1234-4444, addr=서울시 관악구)
+2024-03-12T22:01:28.145+09:00  INFO 7264 --- [main] kr.co.ch06.mapper.User3MapperTest        : User3DTO(uid=a105, name=의자왕, birth=2024-03-01, hp=010-1234-5555, addr=서울시 구로구)
+2024-03-12T22:01:28.145+09:00  INFO 7264 --- [main] kr.co.ch06.mapper.User3MapperTest        : User3DTO(uid=J101, name=테스트, birth=2024-03-12, hp=010-4444-4444, addr=테스트시)
+2024-03-12T22:01:28.170+09:00  INFO 7264 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-12T22:01:28.175+09:00  INFO 7264 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-12T22:06:52.194+09:00  INFO 18644 --- [main] kr.co.ch06.mapper.User3MapperTest        : Starting User3MapperTest using Java 21.0.2 with PID 18644 (started by ksgg1 in C:\Users\ksgg1\OneDrive\바탕 화면\Workspace\Spring\ch06)
+2024-03-12T22:06:52.195+09:00  INFO 18644 --- [main] kr.co.ch06.mapper.User3MapperTest        : No active profile set, falling back to 1 default profile: "default"
+2024-03-12T22:06:53.646+09:00  INFO 18644 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-03-12T22:06:54.057+09:00  INFO 18644 --- [main] kr.co.ch06.mapper.User3MapperTest        : Started User3MapperTest in 2.129 seconds (process running for 2.98)
+2024-03-12T22:06:54.706+09:00  INFO 18644 --- [main] kr.co.ch06.mapper.User3MapperTest        : selectUser3s()...
+2024-03-12T22:06:54.730+09:00  INFO 18644 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-12T22:06:55.014+09:00  INFO 18644 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5d22ed6c
+2024-03-12T22:06:55.016+09:00  INFO 18644 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-12T22:06:55.066+09:00  INFO 18644 --- [main] kr.co.ch06.mapper.User3MapperTest        : User3DTO(uid=A101, name=김유신, birth=1968-05-09, hp=010-1234-1111, addr=경남 김해시)
+2024-03-12T22:06:55.067+09:00  INFO 18644 --- [main] kr.co.ch06.mapper.User3MapperTest        : User3DTO(uid=A102, name=김춘추, birth=1972-11-23, hp=010-1234-2222, addr=경남 경주시)
+2024-03-12T22:06:55.067+09:00  INFO 18644 --- [main] kr.co.ch06.mapper.User3MapperTest        : User3DTO(uid=A103, name=장보고, birth=1978-03-01, hp=010-1234-3333, addr=전남 완도군)
+2024-03-12T22:06:55.067+09:00  INFO 18644 --- [main] kr.co.ch06.mapper.User3MapperTest        : User3DTO(uid=A104, name=강감찬, birth=1979-08-16, hp=010-1234-4444, addr=서울시 관악구)
+2024-03-12T22:06:55.067+09:00  INFO 18644 --- [main] kr.co.ch06.mapper.User3MapperTest        : User3DTO(uid=a105, name=의자왕, birth=2024-03-01, hp=010-1234-5555, addr=서울시 구로구)
+2024-03-12T22:06:55.067+09:00  INFO 18644 --- [main] kr.co.ch06.mapper.User3MapperTest        : User3DTO(uid=J101, name=테스트, birth=2024-03-12, hp=010-4444-4444, addr=테스트시)
+2024-03-12T22:06:55.096+09:00  INFO 18644 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-12T22:06:55.099+09:00  INFO 18644 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-12T22:07:11.074+09:00  INFO 17264 --- [main] kr.co.ch06.mapper.User3MapperTest        : Starting User3MapperTest using Java 21.0.2 with PID 17264 (started by ksgg1 in C:\Users\ksgg1\OneDrive\바탕 화면\Workspace\Spring\ch06)
+2024-03-12T22:07:11.076+09:00  INFO 17264 --- [main] kr.co.ch06.mapper.User3MapperTest        : No active profile set, falling back to 1 default profile: "default"
+2024-03-12T22:07:12.487+09:00  INFO 17264 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-03-12T22:07:12.914+09:00  INFO 17264 --- [main] kr.co.ch06.mapper.User3MapperTest        : Started User3MapperTest in 2.103 seconds (process running for 2.863)
+2024-03-12T22:07:13.644+09:00  INFO 17264 --- [main] kr.co.ch06.mapper.User3MapperTest        : updateUser3()...
+2024-03-12T22:07:13.662+09:00  INFO 17264 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-12T22:07:13.963+09:00  INFO 17264 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1425e531
+2024-03-12T22:07:13.965+09:00  INFO 17264 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-12T22:07:14.000+09:00  INFO 17264 --- [main] kr.co.ch06.mapper.User3MapperTest        : User3DTO(uid=J101, name=테슽흐, birth=2024-04-04, hp=010-1234-4443, addr=우리집)
+2024-03-12T22:07:14.036+09:00  INFO 17264 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-12T22:07:14.041+09:00  INFO 17264 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-12T22:09:15.384+09:00  INFO 8580 --- [main] kr.co.ch06.mapper.User3MapperTest        : Starting User3MapperTest using Java 21.0.2 with PID 8580 (started by ksgg1 in C:\Users\ksgg1\OneDrive\바탕 화면\Workspace\Spring\ch06)
+2024-03-12T22:09:15.386+09:00  INFO 8580 --- [main] kr.co.ch06.mapper.User3MapperTest        : No active profile set, falling back to 1 default profile: "default"
+2024-03-12T22:09:16.711+09:00  INFO 8580 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-03-12T22:09:17.110+09:00  INFO 8580 --- [main] kr.co.ch06.mapper.User3MapperTest        : Started User3MapperTest in 1.98 seconds (process running for 2.65)
+2024-03-12T22:09:17.832+09:00  INFO 8580 --- [main] kr.co.ch06.mapper.User3MapperTest        : deleteUser3()...
+2024-03-12T22:09:17.852+09:00  INFO 8580 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-12T22:09:18.149+09:00  INFO 8580 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4604e051
+2024-03-12T22:09:18.151+09:00  INFO 8580 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-12T22:09:18.222+09:00  INFO 8580 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-12T22:09:18.226+09:00  INFO 8580 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-12T22:27:51.701+09:00  INFO 16708 --- [main] kr.co.ch06.mapper.User3MapperTest        : Starting User3MapperTest using Java 21.0.2 with PID 16708 (started by ksgg1 in C:\Users\ksgg1\OneDrive\바탕 화면\Workspace\Spring\ch06)
+2024-03-12T22:27:51.704+09:00  INFO 16708 --- [main] kr.co.ch06.mapper.User3MapperTest        : No active profile set, falling back to 1 default profile: "default"
+2024-03-12T22:27:53.376+09:00  INFO 16708 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-03-12T22:27:53.792+09:00  INFO 16708 --- [main] kr.co.ch06.mapper.User3MapperTest        : Started User3MapperTest in 2.445 seconds (process running for 3.269)
+2024-03-12T22:27:54.501+09:00  INFO 16708 --- [main] kr.co.ch06.mapper.User3MapperTest        : deleteUser3()...
+2024-03-12T22:27:54.524+09:00  INFO 16708 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-12T22:27:54.868+09:00  INFO 16708 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@26888c31
+2024-03-12T22:27:54.871+09:00  INFO 16708 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-12T22:27:54.948+09:00  INFO 16708 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-12T22:27:54.959+09:00  INFO 16708 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-12T22:28:14.283+09:00  INFO 7512 --- [main] kr.co.ch06.mapper.User4MapperTest        : Starting User4MapperTest using Java 21.0.2 with PID 7512 (started by ksgg1 in C:\Users\ksgg1\OneDrive\바탕 화면\Workspace\Spring\ch06)
+2024-03-12T22:28:14.284+09:00  INFO 7512 --- [main] kr.co.ch06.mapper.User4MapperTest        : No active profile set, falling back to 1 default profile: "default"
+2024-03-12T22:28:15.717+09:00  INFO 7512 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-03-12T22:28:16.163+09:00  INFO 7512 --- [main] kr.co.ch06.mapper.User4MapperTest        : Started User4MapperTest in 2.136 seconds (process running for 2.865)
+2024-03-12T22:28:16.868+09:00  INFO 7512 --- [main] kr.co.ch06.mapper.User4MapperTest        : insertUser4()...
+2024-03-12T22:28:16.892+09:00  INFO 7512 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-12T22:28:17.201+09:00  INFO 7512 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@626df173
+2024-03-12T22:28:17.204+09:00  INFO 7512 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-12T22:28:17.232+09:00  INFO 7512 --- [main] kr.co.ch06.mapper.User4MapperTest        : User4DTO(uid=j101, name=테스트, gender=M, age=25, hp=010-4444-4444, addr=테스트시)
+2024-03-12T22:28:17.294+09:00  INFO 7512 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-12T22:28:17.298+09:00  INFO 7512 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-12T22:30:24.271+09:00  INFO 13900 --- [main] kr.co.ch06.mapper.User4MapperTest        : Starting User4MapperTest using Java 21.0.2 with PID 13900 (started by ksgg1 in C:\Users\ksgg1\OneDrive\바탕 화면\Workspace\Spring\ch06)
+2024-03-12T22:30:24.273+09:00  INFO 13900 --- [main] kr.co.ch06.mapper.User4MapperTest        : No active profile set, falling back to 1 default profile: "default"
+2024-03-12T22:30:25.684+09:00  INFO 13900 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-03-12T22:30:26.081+09:00  INFO 13900 --- [main] kr.co.ch06.mapper.User4MapperTest        : Started User4MapperTest in 2.056 seconds (process running for 2.76)
+2024-03-12T22:30:26.775+09:00  INFO 13900 --- [main] kr.co.ch06.mapper.User4MapperTest        : insertUser4()...
+2024-03-12T22:30:26.799+09:00  INFO 13900 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-12T22:30:27.130+09:00  INFO 13900 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5a9051fd
+2024-03-12T22:30:27.131+09:00  INFO 13900 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-12T22:30:27.161+09:00  INFO 13900 --- [main] kr.co.ch06.mapper.User4MapperTest        : User4DTO(uid=j101, name=테스트, gender=M, age=25, hp=010-4444-4444, addr=테스트시)
+2024-03-12T22:30:27.200+09:00  INFO 13900 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-12T22:30:27.204+09:00  INFO 13900 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-12T22:32:53.986+09:00  INFO 2596 --- [main] kr.co.ch06.mapper.User4MapperTest        : Starting User4MapperTest using Java 21.0.2 with PID 2596 (started by ksgg1 in C:\Users\ksgg1\OneDrive\바탕 화면\Workspace\Spring\ch06)
+2024-03-12T22:32:53.987+09:00  INFO 2596 --- [main] kr.co.ch06.mapper.User4MapperTest        : No active profile set, falling back to 1 default profile: "default"
+2024-03-12T22:32:55.395+09:00  INFO 2596 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-03-12T22:32:55.786+09:00  INFO 2596 --- [main] kr.co.ch06.mapper.User4MapperTest        : Started User4MapperTest in 2.067 seconds (process running for 2.828)
+2024-03-12T22:32:56.538+09:00  INFO 2596 --- [main] kr.co.ch06.mapper.User4MapperTest        : selectUser4()...
+2024-03-12T22:32:56.562+09:00  INFO 2596 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-12T22:32:56.868+09:00  INFO 2596 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4e79c25
+2024-03-12T22:32:56.871+09:00  INFO 2596 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-12T22:32:56.927+09:00  INFO 2596 --- [main] kr.co.ch06.mapper.User4MapperTest        : User4DTO(uid=j101, name=테스트, gender=M, age=25, hp=010-4444-4444, addr=테스트시)
+2024-03-12T22:32:56.957+09:00  INFO 2596 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-12T22:32:56.962+09:00  INFO 2596 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-12T22:34:59.881+09:00  INFO 8896 --- [main] kr.co.ch06.mapper.User4MapperTest        : Starting User4MapperTest using Java 21.0.2 with PID 8896 (started by ksgg1 in C:\Users\ksgg1\OneDrive\바탕 화면\Workspace\Spring\ch06)
+2024-03-12T22:34:59.883+09:00  INFO 8896 --- [main] kr.co.ch06.mapper.User4MapperTest        : No active profile set, falling back to 1 default profile: "default"
+2024-03-12T22:35:01.344+09:00  INFO 8896 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-03-12T22:35:01.733+09:00  INFO 8896 --- [main] kr.co.ch06.mapper.User4MapperTest        : Started User4MapperTest in 2.136 seconds (process running for 2.922)
+2024-03-12T22:35:02.452+09:00  INFO 8896 --- [main] kr.co.ch06.mapper.User4MapperTest        : selectUser4s()...
+2024-03-12T22:35:02.464+09:00  INFO 8896 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-12T22:35:02.749+09:00  INFO 8896 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@24c84e65
+2024-03-12T22:35:02.752+09:00  INFO 8896 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-12T22:35:02.799+09:00  INFO 8896 --- [main] kr.co.ch06.mapper.User4MapperTest        : User4DTO(uid=A101, name=김유신, gender=M, age=25, hp=010-1234-1111, addr=경남 김해시)
+2024-03-12T22:35:02.799+09:00  INFO 8896 --- [main] kr.co.ch06.mapper.User4MapperTest        : User4DTO(uid=A102, name=김춘추, gender=M, age=23, hp=010-1234-2222, addr=경남 경주시)
+2024-03-12T22:35:02.799+09:00  INFO 8896 --- [main] kr.co.ch06.mapper.User4MapperTest        : User4DTO(uid=A103, name=장보고, gender=M, age=35, hp=010-1234-3333, addr=전남 완도군)
+2024-03-12T22:35:02.800+09:00  INFO 8896 --- [main] kr.co.ch06.mapper.User4MapperTest        : User4DTO(uid=A104, name=강감찬, gender=M, age=42, hp=010-1234-4444, addr=서울시 관악구)
+2024-03-12T22:35:02.800+09:00  INFO 8896 --- [main] kr.co.ch06.mapper.User4MapperTest        : User4DTO(uid=a107, name=김땡칠, gender=M, age=27, hp=010-1234-7777, addr=포항시 남구)
+2024-03-12T22:35:02.800+09:00  INFO 8896 --- [main] kr.co.ch06.mapper.User4MapperTest        : User4DTO(uid=A108, name=김땡팔, gender=F, age=10, hp=010-1234-8888, addr=경남 진주시)
+2024-03-12T22:35:02.800+09:00  INFO 8896 --- [main] kr.co.ch06.mapper.User4MapperTest        : User4DTO(uid=j101, name=테스트, gender=M, age=25, hp=010-4444-4444, addr=테스트시)
+2024-03-12T22:35:02.827+09:00  INFO 8896 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-12T22:35:02.831+09:00  INFO 8896 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-12T22:39:27.364+09:00  INFO 15052 --- [main] kr.co.ch06.mapper.User4MapperTest        : Starting User4MapperTest using Java 21.0.2 with PID 15052 (started by ksgg1 in C:\Users\ksgg1\OneDrive\바탕 화면\Workspace\Spring\ch06)
+2024-03-12T22:39:27.364+09:00  INFO 15052 --- [main] kr.co.ch06.mapper.User4MapperTest        : No active profile set, falling back to 1 default profile: "default"
+2024-03-12T22:39:28.857+09:00  INFO 15052 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-03-12T22:39:29.260+09:00  INFO 15052 --- [main] kr.co.ch06.mapper.User4MapperTest        : Started User4MapperTest in 2.153 seconds (process running for 2.963)
+2024-03-12T22:39:29.902+09:00  INFO 15052 --- [main] kr.co.ch06.mapper.User4MapperTest        : updateUser4()...
+2024-03-12T22:39:29.917+09:00  INFO 15052 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-12T22:39:30.230+09:00  INFO 15052 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4e030feb
+2024-03-12T22:39:30.234+09:00  INFO 15052 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-12T22:39:30.279+09:00  INFO 15052 --- [main] kr.co.ch06.mapper.User4MapperTest        : User4DTO(uid=j101, name=테슽흐, gender=F, age=28, hp=010-4444-1114, addr=테스트시시)
+2024-03-12T22:39:30.311+09:00  INFO 15052 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-12T22:39:30.315+09:00  INFO 15052 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-12T22:41:34.527+09:00  INFO 9388 --- [main] kr.co.ch06.mapper.User4MapperTest        : Starting User4MapperTest using Java 21.0.2 with PID 9388 (started by ksgg1 in C:\Users\ksgg1\OneDrive\바탕 화면\Workspace\Spring\ch06)
+2024-03-12T22:41:34.528+09:00  INFO 9388 --- [main] kr.co.ch06.mapper.User4MapperTest        : No active profile set, falling back to 1 default profile: "default"
+2024-03-12T22:41:35.927+09:00  INFO 9388 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-03-12T22:41:36.373+09:00  INFO 9388 --- [main] kr.co.ch06.mapper.User4MapperTest        : Started User4MapperTest in 2.154 seconds (process running for 2.88)
+2024-03-12T22:41:37.129+09:00  INFO 9388 --- [main] kr.co.ch06.mapper.User4MapperTest        : deleteUser4()
+2024-03-12T22:41:37.156+09:00  INFO 9388 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-12T22:41:37.567+09:00  INFO 9388 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@4604e051
+2024-03-12T22:41:37.570+09:00  INFO 9388 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-12T22:41:37.651+09:00  INFO 9388 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-12T22:41:37.655+09:00  INFO 9388 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-12T22:47:07.505+09:00  INFO 1792 --- [main] kr.co.ch06.mapper.User5MapperTest        : Starting User5MapperTest using Java 21.0.2 with PID 1792 (started by ksgg1 in C:\Users\ksgg1\OneDrive\바탕 화면\Workspace\Spring\ch06)
+2024-03-12T22:47:07.509+09:00  INFO 1792 --- [main] kr.co.ch06.mapper.User5MapperTest        : No active profile set, falling back to 1 default profile: "default"
+2024-03-12T22:47:09.271+09:00  INFO 1792 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-03-12T22:47:09.725+09:00  INFO 1792 --- [main] kr.co.ch06.mapper.User5MapperTest        : Started User5MapperTest in 2.537 seconds (process running for 3.375)
+2024-03-12T22:47:10.581+09:00  INFO 1792 --- [main] kr.co.ch06.mapper.User5MapperTest        : insertUser5()...
+2024-03-12T22:47:10.604+09:00  INFO 1792 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-12T22:47:10.975+09:00  INFO 1792 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@75de7009
+2024-03-12T22:47:10.977+09:00  INFO 1792 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-12T22:47:11.005+09:00  INFO 1792 --- [main] kr.co.ch06.mapper.User5MapperTest        : User5DTO(seq=0, name=테스트, gender=M, age=25, addr=테스트시)
+2024-03-12T22:47:11.055+09:00  INFO 1792 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-12T22:47:11.055+09:00  INFO 1792 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

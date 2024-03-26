@@ -4,6 +4,7 @@ async function fetchGet(url){
     console.log("fetchData1...1");
     try{
         console.log("fetchData1...2");
+        // 지정된 URL에서 데이터를 가져오기 위해 fetch 메서드 호출(Promise를 반환)
         const response = await fetch(url);
         console.log("here1");
 
@@ -73,11 +74,12 @@ async function fetchDelete(url){
 
 // fetch PUT용
 async function fetchPut(url, jsonData){
+
     try{
         const response = await fetch(url, {
-            method:'PUT',
+            method: 'PUT',
             headers: {"Content-type":"application/json"},
-            body:JSON.stringify(jsonData)
+            body: JSON.stringify(jsonData)
         });
 
         if(!response.ok){
@@ -85,11 +87,12 @@ async function fetchPut(url, jsonData){
         }
 
         const data = await response.json();
-        console.log("data1 : " +data);
+        console.log("data1 : " + data);
 
         return data;
+
     }catch (err) {
-        console.log(err);
+        console.log(err)
     }
 }
 

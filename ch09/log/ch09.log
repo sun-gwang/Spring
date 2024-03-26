@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2024-03-19T21:08:02.472+09:00  INFO 15216 --- [ch09] [restartedMain] kr.co.ch09.Ch09Application               : Starting Ch09Application using Java 21.0.2 with PID 15216 (C:\Users\ksgg1\OneDrive\바탕 화면\Workspace\Spring\ch09\build\classes\java\main started by ksgg1 in C:\Users\ksgg1\OneDrive\바탕 화면\Workspace\Spring\ch09)
 2024-03-19T21:08:02.493+09:00  INFO 15216 --- [ch09] [restartedMain] kr.co.ch09.Ch09Application               : No active profile set, falling back to 1 default profile: "default"
 2024-03-19T21:08:02.582+09:00  INFO 15216 --- [ch09] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
@@ -1649,3 +1650,39 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template [/user
 2024-03-19T23:06:44.682+09:00  INFO 22912 --- [ch09] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-03-19T23:06:44.682+09:00  INFO 22912 --- [ch09] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
 2024-03-19T23:06:44.688+09:00  INFO 22912 --- [ch09] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+=======
+2024-03-20T16:42:26.979+09:00  INFO 16604 --- [ch09] [restartedMain] kr.co.ch09.Ch09Application               : Starting Ch09Application using Java 21.0.1 with PID 16604 (C:\Users\java\Desktop\WorkSpace\Spring\ch09\build\classes\java\main started by java in C:\Users\java\Desktop\WorkSpace\Spring\ch09)
+2024-03-20T16:42:26.986+09:00  INFO 16604 --- [ch09] [restartedMain] kr.co.ch09.Ch09Application               : No active profile set, falling back to 1 default profile: "default"
+2024-03-20T16:42:27.017+09:00  INFO 16604 --- [ch09] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-03-20T16:42:27.017+09:00  INFO 16604 --- [ch09] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-03-20T16:42:27.471+09:00  INFO 16604 --- [ch09] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-20T16:42:27.498+09:00  INFO 16604 --- [ch09] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 3 JPA repository interfaces.
+2024-03-20T16:42:27.562+09:00  WARN 16604 --- [ch09] [restartedMain] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[kr.co.ch09]' package. Please check your configuration.
+2024-03-20T16:42:27.786+09:00  INFO 16604 --- [ch09] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-03-20T16:42:27.793+09:00  INFO 16604 --- [ch09] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-20T16:42:27.793+09:00  INFO 16604 --- [ch09] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-20T16:42:27.818+09:00  INFO 16604 --- [ch09] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/ch09]   : Initializing Spring embedded WebApplicationContext
+2024-03-20T16:42:27.818+09:00  INFO 16604 --- [ch09] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 800 ms
+2024-03-20T16:42:27.894+09:00  INFO 16604 --- [ch09] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-20T16:42:27.925+09:00  INFO 16604 --- [ch09] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-20T16:42:27.941+09:00  INFO 16604 --- [ch09] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-03-20T16:42:28.059+09:00  INFO 16604 --- [ch09] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-20T16:42:28.073+09:00  INFO 16604 --- [ch09] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-20T16:42:28.239+09:00  INFO 16604 --- [ch09] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@46e3fddd
+2024-03-20T16:42:28.240+09:00  INFO 16604 --- [ch09] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-20T16:42:28.266+09:00  WARN 16604 --- [ch09] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-20T16:42:28.733+09:00  INFO 16604 --- [ch09] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-20T16:42:28.760+09:00  INFO 16604 --- [ch09] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-20T16:42:28.966+09:00  WARN 16604 --- [ch09] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-20T16:42:29.026+09:00  INFO 16604 --- [ch09] [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2024-03-20T16:42:29.112+09:00  INFO 16604 --- [ch09] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@afd9e1a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@32697f68, org.springframework.security.web.context.SecurityContextHolderFilter@4b9d9abe, org.springframework.security.web.header.HeaderWriterFilter@79ae21c5, org.springframework.web.filter.CorsFilter@7c0e17bb, org.springframework.security.web.authentication.logout.LogoutFilter@43219feb, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@57784980, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7bcc285b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@c5776c2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@78ca613d, org.springframework.security.web.access.ExceptionTranslationFilter@607ddd6c, org.springframework.security.web.access.intercept.AuthorizationFilter@428f4461]
+2024-03-20T16:42:29.309+09:00  INFO 16604 --- [ch09] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-03-20T16:42:29.328+09:00  INFO 16604 --- [ch09] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/ch09'
+2024-03-20T16:42:29.333+09:00  INFO 16604 --- [ch09] [restartedMain] kr.co.ch09.Ch09Application               : Started Ch09Application in 2.59 seconds (process running for 2.92)
+2024-03-20T16:42:38.321+09:00  INFO 16604 --- [ch09] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/ch09]   : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-20T16:42:38.321+09:00  INFO 16604 --- [ch09] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-20T16:42:38.322+09:00  INFO 16604 --- [ch09] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-03-20T16:47:21.578+09:00  INFO 16604 --- [ch09] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-20T16:47:21.580+09:00  INFO 16604 --- [ch09] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-20T16:47:21.583+09:00  INFO 16604 --- [ch09] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+>>>>>>> 30084caf518e9629b9d777d66af6d1588490fd50

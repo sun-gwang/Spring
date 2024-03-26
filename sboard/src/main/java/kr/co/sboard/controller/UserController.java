@@ -2,6 +2,7 @@ package kr.co.sboard.controller;
 
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
+import kr.co.sboard.config.AppInfo;
 import kr.co.sboard.dto.TermsDTO;
 import kr.co.sboard.dto.UserDTO;
 import kr.co.sboard.service.UserService;
@@ -22,10 +23,14 @@ import java.util.Objects;
 public class UserController {
 
     private final UserService userService;
+    private final AppInfo appinfo;
 
     @GetMapping("/user/login")
-    public String login(@ModelAttribute("success") String success){
+    public String login(@ModelAttribute("success") String success, Model model){
         // 매개변수 success에 ModelAttribute 선언으로 View참조할 수 있음
+
+        model.addAttribute(appinfo);
+
         return "/user/login";
     }
 
@@ -41,6 +46,16 @@ public class UserController {
     @GetMapping("/user/register")
     public String register(){
         return "/user/register";
+    }
+
+    @GetMapping("/user/findId")
+    public String findId(){
+        return "/user/findId";
+    }
+
+    @GetMapping("/user/findPassword")
+    public String findPassword(){
+        return "/user/findPassword";
     }
 
     @PostMapping("/user/register")
@@ -61,6 +76,9 @@ public class UserController {
     public ResponseEntity<?> checkUser(HttpSession session,
                                        @PathVariable("type")  String type,
                                        @PathVariable("value") String value){
+
+        log.info("type : " + type);
+        log.info("value : " + value);
 
         int count = userService.selectCountUser(type, value);
         log.info("count : " + count);
