@@ -4,6 +4,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import kr.co.sboard.dto.ArticleDTO;
 import kr.co.sboard.dto.PageRequestDTO;
 import kr.co.sboard.dto.PageResponseDTO;
+import kr.co.sboard.entity.Config;
+import kr.co.sboard.repository.ConfigRepository;
 import kr.co.sboard.service.ArticleService;
 import kr.co.sboard.service.FileService;
 import lombok.RequiredArgsConstructor;
@@ -11,12 +13,14 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.Banner;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Slf4j @Controller @RequiredArgsConstructor
 public class ArticleController {
@@ -27,9 +31,10 @@ public class ArticleController {
     */
 
     private final ArticleService articleService;
+    private final ConfigRepository configRepository;
 
     @GetMapping("/article/list")
-    public String list(Model model, PageRequestDTO pageRequestDTO){
+    public String list(Model model, String cate, PageRequestDTO pageRequestDTO){
 
         PageResponseDTO pageResponseDTO = articleService.findByParentAndCate(pageRequestDTO);
         log.info("pageResponseDTO" + pageResponseDTO);
@@ -40,7 +45,7 @@ public class ArticleController {
     }
 
     @GetMapping("/article/write")
-    public String write(@ModelAttribute("cate") String cate){
+    public String write(Model model, String cate){
         return "/article/write";
     }
 
@@ -61,7 +66,7 @@ public class ArticleController {
     }
 
     @GetMapping("/article/view")
-    public String view(int no, Model model){
+    public String view(Model model, String cate, int no){
 
         ArticleDTO articleDTO = articleService.findById(no);
         model.addAttribute(articleDTO);
@@ -71,22 +76,32 @@ public class ArticleController {
 
 
     @GetMapping("/article/modify")
-    public String articleModify(int no) {
+    public String articleModify() {
         return "/article/modify";
     }
 
-    /*
+
+    @ResponseBody
     @GetMapping("/article/{no}")
     public ArticleDTO modify(@PathVariable("no") int no){
         ArticleDTO articleDTO = articleService.selectArticle(no);
         return articleDTO;
     }
-     */
 
 
+    @ResponseBody
     @DeleteMapping("/article/{no}")
     public ResponseEntity<?> deleteArticle(@PathVariable("no") int no){
         return articleService.deleteArticle(no);
     }
 
+    @ResponseBody
+    @PutMapping("/article")
+    public ResponseEntity<ArticleDTO> modify(@RequestBody ArticleDTO articleDTO, HttpServletRequest req){
+
+        String regip = req.getRemoteAddr();
+        articleDTO.setRegip(regip);
+        ArticleDTO result = articleService.updateArticle(articleDTO);
+        return ResponseEntity.status(HttpStatus. ACCEPTED).body(result);
+    }
 }

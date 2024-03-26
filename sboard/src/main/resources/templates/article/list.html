@@ -5,14 +5,14 @@
 <div class="container-fluid px-4" layout:fragment="content">
     <h1 class="mt-4">게시판 목록</h1>
     <ol class="breadcrumb mb-4">
-        <li class="breadcrumb-item active">OOO 게시판 글목록</li>
+        <li class="breadcrumb-item active">게시판 목록</li>
     </ol>
 
     <!-- 내용 시작 -->
     <div class="card mb-4">
         <div class="card-header">
             <i class="fas fa-table me-1"></i>
-            000 글목록
+            [[${boardName}]] 글목록
         </div>
         <div class="card-body">
             <table class="table table-hover">
@@ -30,7 +30,7 @@
                     <tr th:each="article, index:${pageResponseDTO.dtoList}">
                         <td>[[${pageResponseDTO.startNo - index.index}]]</td>
                         <td>
-                            <a th:href="@{/article/view(no=${article.no})}">[[${article.title}]]</a>
+                            <a th:href="@{/article/view(no=${article.no},cate=${article.cate})}">[[${article.title}]]</a>
                         </td>
                         <td>홍길동</td>
                         <td>[[${article.hit}]]</td>

@@ -119,4 +119,16 @@ public class ArticleService {
 
         return articleDTO;
     }
+
+    public ArticleDTO updateArticle(ArticleDTO articleDTO){
+        
+        // 수정
+        Article article = modelMapper.map(articleDTO, Article.class);
+        articleRepository.save(article);
+
+        Optional<Article> result = articleRepository.findById(articleDTO.getNo());
+        articleDTO = modelMapper.map(result, ArticleDTO.class);
+        return articleDTO;
+    }
+    
 }
