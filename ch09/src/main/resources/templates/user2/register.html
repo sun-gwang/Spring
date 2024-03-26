@@ -4,6 +4,43 @@
     <meta charset="UTF-8">
     <title>user2::register</title>
 </head>
+<script>
+    window.onload = function () {
+        const formUser2 = document.formUser2;
+
+        formUser2.onsubmit = function (e){
+            e.preventDefault();
+
+            const uid = formUser2.uid.value;
+            const name = formUser2.name.value;
+            const birth = formUser2.birth.value;
+            const addr = formUser2.addr.value;
+
+            const jsonData = {
+                "uid":uid,
+                "name":name,
+                "birth":birth,
+                "addr":addr
+            };
+            fetch(`/ch09/user2`,{
+                method:'POST',
+                headers: {'Content-Type':'application/json'},
+                body: JSON.stringify(jsonData)
+            })
+                .then(response=> response.json())
+                .then(data=>{
+                    console.log(data);
+                    if(data != null){
+                        alert('등록되었습니다!');
+                        location.href = '/ch09/user2/list';
+                    }
+                })
+                .catch((err)=>{
+                console.log(err);
+            })
+        }
+    }
+</script>
 <body>
 <a href="/ch09/">메인</a>
 <a href="/ch09/user2/list">목록</a>
@@ -24,12 +61,8 @@
             <td><input type="date" name="birth"></td>
         </tr>
         <tr>
-            <td>휴대폰</td>
-            <td><input type="text" name="hp"></td>
-        </tr>
-        <tr>
-            <td>나이</td>
-            <td><input type="number" name="age"></td>
+            <td>주소</td>
+            <td><input type="text" name="addr"></td>
         </tr>
         <tr>
             <td colspan="2" align="right"><input type="submit" value="등록"></td>

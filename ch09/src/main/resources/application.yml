@@ -19,7 +19,7 @@ spring:
         name: ch09
     datasource:
         driver-class-name: com.mysql.cj.jdbc.Driver
-        password: abcd1234
+        password: Abcd!1234
         url: jdbc:mysql://127.0.0.1:3306/studydb
         username: kc5353
     devtools:

@@ -51,10 +51,9 @@
                     fetch(`/ch09/user1/${uid}`, {
                         method: 'DELETE'
                     })
-                        .then(response => response.json())
                         .then(data => {
                             if(data != null){
-                                alert(data.uid + '를 삭제 했습니다.');
+                                alert(uid + '를 삭제 했습니다.');
 
                                 // 태그 동적 삭제
                                 tr.remove();
