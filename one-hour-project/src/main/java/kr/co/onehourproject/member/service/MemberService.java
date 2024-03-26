@@ -1,4 +1,6 @@
-package kr.co.onehourproject.user.service;
+package kr.co.onehourproject.member.service;
 
-public class UserService {
+public interface MemberService {
+
+    String join(String id, String name, String phoneNumber);
 }
