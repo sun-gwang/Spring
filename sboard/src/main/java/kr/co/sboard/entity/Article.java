@@ -45,5 +45,6 @@ public class Article {
     @OneToMany(mappedBy = "ano") //mappedBy는 매핑되는 엔티티(테이블)의 FK 컬럼 지정
     private List<File> fileList;
 
+    private String nick;
 
 }

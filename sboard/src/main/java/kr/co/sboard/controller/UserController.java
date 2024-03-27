@@ -7,12 +7,14 @@ import kr.co.sboard.dto.TermsDTO;
 import kr.co.sboard.dto.UserDTO;
 import kr.co.sboard.service.UserService;
 import lombok.RequiredArgsConstructor;
+import lombok.Value;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import javax.lang.model.type.TypeMirror;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -51,6 +53,11 @@ public class UserController {
     @GetMapping("/user/findId")
     public String findId(){
         return "/user/findId";
+    }
+
+    @GetMapping("/user/findIdResult")
+    public String findIdResult(){
+        return "/user/findIdResult";
     }
 
     @GetMapping("/user/findPassword")
@@ -95,6 +102,42 @@ public class UserController {
 
         return ResponseEntity.ok().body(resultMap);
     }
+
+    // 아이디 찾기 이름 확인
+    @ResponseBody
+    @GetMapping("/selectName/{type}/{value}")
+    public int selectName(@PathVariable("type")  String type,
+                           @PathVariable("value") String value){
+
+        return userService.selectCountUser(type, value);
+    }
+
+    // 아이디 찾기 이메일 검사, 전송
+    @ResponseBody
+    @GetMapping("/idEmail/{type}/{value}")
+    public ResponseEntity<?> idEmail(HttpSession session,
+                                                       @PathVariable("type")  String type,
+                                                       @PathVariable("value") String value){
+
+        log.info("type : " + type);
+        log.info("value : " + value);
+
+        int count = userService.selectCountUser(type, value);
+
+        log.info("count : " + count);
+
+        // 존재하는 메일이라면 발송
+        if(count != 0 && type.equals("email")){
+            userService.sendEmailCode(session, value);
+        }
+
+        // Json 생성
+        Map<String, Object> resultMap = new HashMap<>();
+        resultMap.put("result", count);
+
+        return ResponseEntity.ok().body(resultMap);
+    }
+
 
     // 이메일 인증 코드 검사
     @ResponseBody

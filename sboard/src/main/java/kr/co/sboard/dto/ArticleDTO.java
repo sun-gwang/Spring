@@ -26,4 +26,6 @@ public class ArticleDTO {
     private UserDTO user;
 
     private List<FileDTO> fileList;
+
+    private String nick;
 }

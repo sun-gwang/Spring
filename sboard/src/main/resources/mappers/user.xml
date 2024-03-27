@@ -16,6 +16,7 @@
             <if test="type == 'nick'">nick=#{value}</if>
             <if test="type == 'hp'">hp=#{value}</if>
             <if test="type == 'email'">email=#{value}</if>
+            <if test="type == 'name'">name=#{value}</if>
         </where>
     </select>
 

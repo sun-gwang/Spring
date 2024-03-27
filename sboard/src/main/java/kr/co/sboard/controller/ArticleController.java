@@ -36,10 +36,20 @@ public class ArticleController {
     @GetMapping("/article/list")
     public String list(Model model, String cate, PageRequestDTO pageRequestDTO){
 
-        PageResponseDTO pageResponseDTO = articleService.findByParentAndCate(pageRequestDTO);
-        log.info("pageResponseDTO" + pageResponseDTO);
+        PageResponseDTO pageResponseDTO = null;
 
+        if(pageRequestDTO.getKeyword() == null) {
+            // 일반 글 목록 조회
+            pageResponseDTO = articleService.selectArticles(pageRequestDTO);
+
+        }else{
+            // 검색 글 목록 조회
+            pageResponseDTO = articleService.searchArticles(pageRequestDTO);
+        }
+
+        log.info("pageResponseDTO" + pageResponseDTO);
         model.addAttribute(pageResponseDTO);
+
 
         return "/article/list";
     }
@@ -97,11 +107,8 @@ public class ArticleController {
 
     @ResponseBody
     @PutMapping("/article")
-    public ResponseEntity<ArticleDTO> modify(@RequestBody ArticleDTO articleDTO, HttpServletRequest req){
+    public ResponseEntity<?> modify(@RequestBody ArticleDTO articleDTO){
 
-        String regip = req.getRemoteAddr();
-        articleDTO.setRegip(regip);
-        ArticleDTO result = articleService.updateArticle(articleDTO);
-        return ResponseEntity.status(HttpStatus. ACCEPTED).body(result);
+        return articleService.updateArticle(articleDTO);
     }
 }

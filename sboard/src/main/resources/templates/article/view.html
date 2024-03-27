@@ -188,11 +188,14 @@
             //////////////////////////////////////////////////////////////////////////
             const btn_Modify = document.getElementById('btn_Modify');
             const btn_Delete = document.getElementById('btn_Delete');
+            const url = location.href;
+            const params = url.split('&')[1];
+            const cate = params.split('=')[1];
 
             btn_Modify.onclick = function (e){
                 e.preventDefault();
 
-                location.href = `/sboard/article/modify?no=${no}`;
+                location.href = `/sboard/article/modify?no=${no}&cate=${cate}`;
 
             }
 

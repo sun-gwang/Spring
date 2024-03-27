@@ -1,5 +1,6 @@
 package kr.co.sboard.service;
 
+import com.querydsl.core.Tuple;
 import jakarta.persistence.Entity;
 import kr.co.sboard.dto.ArticleDTO;
 import kr.co.sboard.dto.FileDTO;
@@ -32,14 +33,48 @@ public class ArticleService {
     private final ModelMapper modelMapper;
 
 
-    public PageResponseDTO findByParentAndCate(PageRequestDTO pageRequestDTO){
+    public PageResponseDTO selectArticles(PageRequestDTO pageRequestDTO){
+
+        log.info("selectArticles...1");
+        Pageable pageable = pageRequestDTO.getPageable("no");
+
+        log.info("selectArticles...2");
+        Page<Tuple> pageArticle = articleRepository.selectArticles(pageRequestDTO, pageable);
+
+        log.info("selectArticles...3 : " + pageArticle);
+        List<ArticleDTO> dtoList = pageArticle.getContent().stream()
+                                    .map(tuple ->
+                                            {
+                                                log.info("tuple : " + tuple);
+                                                Article article = tuple.get(0, Article.class);
+                                                String nick = tuple.get(1, String.class);
+                                                article.setNick(nick);
+
+                                                log.info("article : " + article);
+
+                                                return modelMapper.map(article, ArticleDTO.class);
+                                            }
+                                    )
+                                    .toList();
+        log.info("selectArticles...4 : " + dtoList);
+
+        int total = (int) pageArticle.getTotalElements();
+
+        return PageResponseDTO.builder()
+                .pageRequestDTO(pageRequestDTO)
+                .dtoList(dtoList)
+                .total(total).build();
+    }
+
+    public PageResponseDTO searchArticles(PageRequestDTO pageRequestDTO){
 
         Pageable pageable = pageRequestDTO.getPageable("no");
-        Page<Article> pageArticle = articleRepository.findByParentAndCate(0,pageRequestDTO.getCate(), pageable);
+        Page<Article> pageArticle = articleRepository.searchArticles(pageRequestDTO, pageable);
 
         List<ArticleDTO> dtoList = pageArticle.getContent().stream()
-                                    .map(entity -> modelMapper.map(entity, ArticleDTO.class))
-                                    .toList();
+                .map(entity -> modelMapper.map(entity, ArticleDTO.class))
+                .toList();
+
         int total = (int) pageArticle.getTotalElements();
 
         return PageResponseDTO.builder()
@@ -120,15 +155,24 @@ public class ArticleService {
         return articleDTO;
     }
 
-    public ArticleDTO updateArticle(ArticleDTO articleDTO){
-        
-        // 수정
-        Article article = modelMapper.map(articleDTO, Article.class);
-        articleRepository.save(article);
+    public ResponseEntity<?> updateArticle(ArticleDTO articleDTO){
 
-        Optional<Article> result = articleRepository.findById(articleDTO.getNo());
-        articleDTO = modelMapper.map(result, ArticleDTO.class);
-        return articleDTO;
+        // 확인
+        Optional<Article> optArticle = articleRepository.findById(articleDTO.getNo());
+
+        if(optArticle.isPresent()){
+            Article article = optArticle.get();
+            log.info("article:" + article);
+
+            article.setTitle(articleDTO.getTitle());
+            article.setContent(articleDTO.getContent());
+
+            Article modifiedArticle = articleRepository.save(article);
+
+            return ResponseEntity.status(HttpStatus.OK).body(modifiedArticle);
+        }else{
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("not found");
+        }
     }
     
 }

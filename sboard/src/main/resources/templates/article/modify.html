@@ -8,9 +8,16 @@
         window.onload = async function (){
 
             // 파라미터 값 가져오기
-            const url = location.href;
-            const no = url.split('=')[1];
-            console.log(no);
+            const serachParams = new URLSearchParams(location.search);
+            const values = [];
+            serachParams.forEach((value)=>{
+                values.push(value);
+            });
+            const no = values[0];
+            const cate = values[1];
+
+            console.log('no:'+no);
+            console.log('cate:'+cate);
 
             // 수정 데이터 요청
             const data = await fetchGet(`/sboard/article/${no}`);
@@ -19,7 +26,6 @@
             const formModify = document.formModify;
             formModify.title.value = data.title;
             formModify.content.value = data.content;
-
 
             // 수정 요청
             const btnModify = document.getElementById('btnModify');
@@ -30,9 +36,10 @@
                 e.preventDefault();
 
                 const jsonData = {
+                    "no":no,
+                    "writer" :formModify.writer.value,
                     "title":formModify.title.value,
-                    "content":formModify.content.value,
-                    "writer" :formModify.writer.value
+                    "content":formModify.content.value
                 };
 
                 console.log(jsonData);
@@ -41,10 +48,16 @@
 
                if(data != null){
                    alertModal('수정되었습니다');
-                   location.href = `/sboard/article/view?no=${no}`;
+                   location.href = `/sboard/article/view?no=${no}&cate=${cate}`;
                }
             }
 
+            // 취소
+            const btnCancel = document.getElementById('btnCancel');
+            btnCancel.onclick = async function (e){
+                e.preventDefault();
+                location.href = `/sboard/article/view?no=${no}&cate=${cate}`;
+            }
         }
     </script>
     <h1 class="mt-4">글 수정</h1>
@@ -74,8 +87,8 @@
         </div>
     </div>
     <div class="text-end">
-        <a th:href="@{/article/list}" class="btn btn-success btn_Modify">취소</a>
-        <a th:href="@{#}" class="btn btn-secondary btn_Delete" id="btnModify">수정</a>
+        <a th:href="@{#}" class="btn btn-success" id="btnModify">수정</a>
+        <a th:href="@{#}" class="btn btn-secondary " id="btnCancel">취소</a>
     </div>
     <!-- 내용 끝 -->
 </div>
