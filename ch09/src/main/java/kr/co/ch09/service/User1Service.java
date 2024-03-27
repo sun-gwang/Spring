@@ -50,10 +50,11 @@ public class User1Service {
         Optional<User1> result = repository.findById(user1DTO.getUid());
         return result.get().toDTO();
     }
+
     public ResponseEntity deleteUser1(String uid){
-        repository.deleteById(uid);
 
         Optional<User1> optUser1 = repository.findById(uid);
+
         if(optUser1.isPresent()){
             // 삭제할 사용자가 존재하면 삭제 후 삭제한 사용자 정보 ResponseEntity로 반환
             repository.deleteById(uid);
@@ -62,8 +63,6 @@ public class User1Service {
             // 사용자가 존재하지 않으면 NOT_FOUND 응답데이터와 user not found 메시지
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("user not found");
         }
-
-
 
     }
 

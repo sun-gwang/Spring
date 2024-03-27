@@ -44,24 +44,34 @@
                     location.href = `/ch09/user1/modify?uid=${uid}`;
 
                 }else if(e.target.classList == 'delete') {
+
                     // 삭제
                     const tr = e.target.closest('tr');
                     const uid = e.target.dataset.uid;
 
-                    fetch(`/ch09/user1/${uid}`, {
-                        method: 'DELETE'
+                    fetch(`/ch09/user1/${uid}`,{
+                        method:'DELETE'
                     })
+<<<<<<< Updated upstream
                         .then(data => {
                             if(data != null){
                                 alert(uid + '를 삭제 했습니다.');
 
                                 // 태그 동적 삭제
+=======
+                        .then(data=> {
+                            console.log(data);
+                            console.log(uid);
+                            if(data != null){
+                                alert(uid +'를 삭제 했습니다.');
+>>>>>>> Stashed changes
                                 tr.remove();
                             }
+
                         })
-                        .catch(err => {
-                            console.log(err);
-                        });
+                        .catch((err)=>{
+                        console.log(err);
+                    })
                 }
             });
         }
