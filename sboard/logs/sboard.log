@@ -9955,3 +9955,42 @@ java.lang.ClassCastException: class kr.co.sboard.entity.User cannot be cast to c
 2024-03-27T17:41:26.488+09:00  INFO 6248 --- [sboard] [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/sboard]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2024-03-27T17:41:26.488+09:00  INFO 6248 --- [sboard] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2024-03-27T17:41:26.489+09:00  INFO 6248 --- [sboard] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-03-27T17:48:18.534+09:00  INFO 6248 --- [sboard] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-03-27T17:48:18.536+09:00  INFO 6248 --- [sboard] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-03-27T17:48:18.540+09:00  INFO 6248 --- [sboard] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-03-27T17:52:21.779+09:00  INFO 17484 --- [sboard] [restartedMain] kr.co.sboard.SboardApplication           : Starting SboardApplication using Java 21.0.1 with PID 17484 (C:\Users\java\Desktop\WorkSpace\Spring\sboard\build\classes\java\main started by java in C:\Users\java\Desktop\WorkSpace\Spring\sboard)
+2024-03-27T17:52:21.780+09:00  INFO 17484 --- [sboard] [restartedMain] kr.co.sboard.SboardApplication           : No active profile set, falling back to 1 default profile: "default"
+2024-03-27T17:52:21.924+09:00  INFO 17484 --- [sboard] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-03-27T17:52:21.925+09:00  INFO 17484 --- [sboard] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-03-27T17:52:22.355+09:00  INFO 17484 --- [sboard] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-03-27T17:52:22.389+09:00  INFO 17484 --- [sboard] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 30 ms. Found 4 JPA repository interfaces.
+2024-03-27T17:52:22.761+09:00  INFO 17484 --- [sboard] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-03-27T17:52:22.770+09:00  INFO 17484 --- [sboard] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-03-27T17:52:22.770+09:00  INFO 17484 --- [sboard] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.19]
+2024-03-27T17:52:22.807+09:00  INFO 17484 --- [sboard] [restartedMain] o.a.c.c.C.[.[localhost].[/sboard]        : Initializing Spring embedded WebApplicationContext
+2024-03-27T17:52:22.807+09:00  INFO 17484 --- [sboard] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 882 ms
+2024-03-27T17:52:22.925+09:00  INFO 17484 --- [sboard] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-03-27T17:52:22.956+09:00  INFO 17484 --- [sboard] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2024-03-27T17:52:22.979+09:00  INFO 17484 --- [sboard] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-03-27T17:52:23.130+09:00  INFO 17484 --- [sboard] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-03-27T17:52:23.148+09:00  INFO 17484 --- [sboard] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-03-27T17:52:23.354+09:00  INFO 17484 --- [sboard] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@2cd38aee
+2024-03-27T17:52:23.356+09:00  INFO 17484 --- [sboard] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-03-27T17:52:23.380+09:00  WARN 17484 --- [sboard] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-03-27T17:52:23.845+09:00  INFO 17484 --- [sboard] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-03-27T17:52:23.867+09:00  INFO 17484 --- [sboard] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-03-27T17:52:24.236+09:00  WARN 17484 --- [sboard] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-03-27T17:52:24.381+09:00  INFO 17484 --- [sboard] [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@107cca07, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@68819041, org.springframework.security.web.context.SecurityContextHolderFilter@290ea6fd, org.springframework.security.web.header.HeaderWriterFilter@191fa1c6, org.springframework.web.filter.CorsFilter@7fcd8c3c, org.springframework.security.web.authentication.logout.LogoutFilter@1657fd98, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@280eadc, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@685e4af0, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@57b46c4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@209c72a9, org.springframework.security.web.access.ExceptionTranslationFilter@73254fc5, org.springframework.security.web.access.intercept.AuthorizationFilter@64ce62b7]
+2024-03-27T17:52:24.520+09:00  INFO 17484 --- [sboard] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-03-27T17:52:24.542+09:00  INFO 17484 --- [sboard] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/sboard'
+2024-03-27T17:52:24.546+09:00  INFO 17484 --- [sboard] [restartedMain] kr.co.sboard.SboardApplication           : Started SboardApplication in 2.974 seconds (process running for 3.308)
+2024-03-27T17:52:25.865+09:00  INFO 17484 --- [sboard] [http-nio-8080-exec-1] o.a.c.c.C.[.[localhost].[/sboard]        : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-03-27T17:52:25.865+09:00  INFO 17484 --- [sboard] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-03-27T17:52:25.866+09:00  INFO 17484 --- [sboard] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-03-27T17:56:14.872+09:00  INFO 17484 --- [sboard] [http-nio-8080-exec-8] kr.co.sboard.controller.UserController   : type : email
+2024-03-27T17:56:14.872+09:00  INFO 17484 --- [sboard] [http-nio-8080-exec-8] kr.co.sboard.controller.UserController   : value : 1507255@donga.ac.kr
+2024-03-27T17:56:14.874+09:00  INFO 17484 --- [sboard] [http-nio-8080-exec-8] kr.co.sboard.controller.UserController   : count : 0
+2024-03-27T17:56:23.350+09:00  INFO 17484 --- [sboard] [http-nio-8080-exec-6] kr.co.sboard.controller.UserController   : type : email
+2024-03-27T17:56:23.350+09:00  INFO 17484 --- [sboard] [http-nio-8080-exec-6] kr.co.sboard.controller.UserController   : value : kkj80911@gmail.com
+2024-03-27T17:56:23.352+09:00  INFO 17484 --- [sboard] [http-nio-8080-exec-6] kr.co.sboard.controller.UserController   : count : 1
+2024-03-27T17:56:23.352+09:00  INFO 17484 --- [sboard] [http-nio-8080-exec-6] kr.co.sboard.service.UserService         : sender : kkj80911@gmail.com

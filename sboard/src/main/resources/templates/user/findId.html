@@ -39,10 +39,8 @@
                     return;
                 }
 
-                const data = fetchGet(`/sboard/selectName/${type}/${value}`)
-
-                const result = await data;
-                console.log('nameResult : '+result);
+                const result = await fetchGet(`/sboard/selectName/${type}/${value}`)
+                console.log('nameResult : ' + result);
 
                 if(result == 1){
                     showInputValid(inputName);
@@ -75,8 +73,7 @@
                             showResultInvalid(resultEmail, '이메일이 형식에 맞지 않습니다.');
                             isNameOk = false;
                         }
-                        const data = fetchGet(`/sboard/idEmail/${type}/${value}`);
-                        const result = await data;
+                        const result = await fetchGet(`/sboard/idEmail/${type}/${value}`);
                         const count = result.result;
                         console.log(count);
 
