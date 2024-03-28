@@ -19,11 +19,24 @@
                 }
             }
 
+            // 좋아요 싫어요 동적 처리
+            const btnGood = document.getElementsByClassName('btnGood')[0];
+            const btnHate = document.getElementsByClassName('btnHate')[0];
+
+            btnGood.onclick = async function(){
+                const goodSpan = document.getElementById('goodValue');
+                const goodValue = goodSpan.value;
+                console.log(goodValue);
+            }
+
+            btnHate.onclick = async function(){
+                alert('CC');
+            }
+
             //////////////////////////////////////////////////////////////////////////
             // 댓글 불러오기
             //////////////////////////////////////////////////////////////////////////
             const commentList = document.getElementById('commentList');
-            const commentPlaceholder = document.getElementById('commentPlaceholder');
 
             // 상단 <script> 선언 태그에 th:inline="javascript" 속성 추가
             const no = [[${articleDTO.no}]]
@@ -36,7 +49,6 @@
                 console.log('comments : ' + comments);
                 for(const comment of comments){
 
-                    commentPlaceholder.remove();
                     const commentArticle = `<div class="mb-3 comment" data-no="${comment.no}">
                                                     <ol class="breadcrumb mb-1">
                                                          <li class="breadcrumb-item">${comment.writer}</li>
@@ -257,9 +269,20 @@
                     </button>
                 </div>
             </form>
-
         </div>
     </div>
+
+    <button type="button" class="btn btn-info position-relative btnGood">
+            좋아요👍
+      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info" id="goodValue"> 1 </span>
+    </button>
+
+    <button type="button" class="btn btn-danger position-relative btnHate">
+            싫어요👎
+      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"> 0 </span>
+
+    </button>
+
     <div class="text-end">
         <a th:href="@{/article/list}" class="btn btn-primary m-3">목록</a>
     </div>
@@ -274,18 +297,8 @@
             처음 글을 불러올때 댓글은 플레이스홀더로 표시하고 이후 AJAX(fetch)로
             댓글 불러와서 플레이스홀더를 제거하고 댓글을 출력
         -->
-        <div class="mb-3 placeholder-glow" id="commentPlaceholder">
-            <ol class="breadcrumb mb-1">
-                <li class="breadcrumb-item bg-secondary placeholder col-1 me-1"></li>
-                <li class="breadcrumb-item bg-secondary placeholder col-1"></li>
-            </ol>
 
-            <textarea class="form-control bg-secondary placeholder" rows="3" readonly></textarea>
-            <div class="text-end mt-1">
-                <button type="button" class="btn btn-warning btn-sm placeholder disabled col-1"></button>
-                <button type="button" class="btn btn-danger btn-sm placeholder disabled col-1"></button>
-            </div>
-        </div>
+
 
     </div>
 

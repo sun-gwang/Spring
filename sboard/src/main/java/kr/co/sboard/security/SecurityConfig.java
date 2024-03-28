@@ -29,6 +29,10 @@ public class SecurityConfig {
                                         .logoutRequestMatcher(new AntPathRequestMatcher("/user/logout"))
                                         .logoutSuccessUrl("/user/login?success=300"));
 
+        // OAuth 설정
+        httpSecurity.oauth2Login(config -> config.loginPage("/user/login")
+                                            .defaultSuccessUrl("/"));
+
         /*
             인가 설정
              - Spring Security는 존재하지 않는 요청 주소에 대해 기본적으로 login 페이지로 redirect를 수행

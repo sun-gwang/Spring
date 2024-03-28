@@ -46,6 +46,9 @@
                                 <input type="submit" class="btn btn-primary" value="로그인"/>
                             </div>
                         </form>
+                        <a th:href="@{/oauth2/authorization/google}">
+                            <img th:src="@{/assets/img/web_neutral_rd_ctn.svg}" alt="구글로 로그인">
+                        </a>
                     </div>
                     <div class="card-footer text-center py-3">
                         <div class="small"><a th:href="@{/user/terms}">회원가입</a></div>

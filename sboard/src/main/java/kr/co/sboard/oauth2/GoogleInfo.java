@@ -1,4 +1,4 @@
-package kr.co.oauth.oauthtest.oauth2;
+package kr.co.sboard.oauth2;
 
 import java.util.Map;
 

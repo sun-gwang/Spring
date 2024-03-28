@@ -30,6 +30,7 @@
 
             inputName[0].addEventListener('focusout', async ()=> {
                 const value = inputName[0].value;
+                console.log(value)
                 const type = 'name';
 
                 if(!value.match(reName)){
@@ -94,8 +95,49 @@
                 }
 
                 // 이메일 인증번호 확인 후 isEmailOk true 반환
+                const inputEmailCodes    = document.getElementsByClassName('inputEmailCode');
+                const btnCheckEmailCode = document.getElementById('btnCheckEmailCode');
 
+                btnCheckEmailCode.onclick = async function(){
+                    const value = inputEmailCodes[0].value;
+                    const resultEmailCode = document.getElementById('resultEmailCode');
+                    console.log(value);
+
+                    const data = await fetchGet(`/sboard/email/${value}`);
+
+                    console.log(data.result);
+                    if(data.result){
+                        showInputValid(inputEmails);
+                        showInputValid(inputEmailCodes);
+                        showResultValid(resultEmailCode, '이메일이 인증되었습니다.');
+                        isEmailOk = true;
+                    }else{
+                        showInputInvalid(inputEmails);
+                        showInputInvalid(inputEmailCodes);
+                        showResultInvalid(resultEmailCode, '인증코드가 일치하지 않습니다.');
+                        isEmailOk = false;
+                    }
+
+                }
                 // isNameOk, isEmailOk 둘 다 트루 일 때 다음 버튼
+                const btnNext = document.getElementById('btnNext');
+                btnNext.onclick = function (e){
+                    e.preventDefault();
+                    const name = inputName[0].value;
+                    /*
+                    if(!isNameOk){
+                        showModal('아이디를 확인하세요');
+                        return false;
+                    }
+                    if(!isEmailOk){
+                        showModal('이메일 인증을 완료하세요');
+                        return false;
+                    }
+                    */
+                    location.href=`/sboard/user/findIdResult?name=${name}`;
+                    return true;
+                }
+
         }
     </script>
     <div class="row justify-content-center">

@@ -78,5 +78,10 @@ public class UserService {
 
     }
 
+    // 아이디 찾기
+    public UserDTO selectUser(String name){
+
+        return null;
+    }
 
 }

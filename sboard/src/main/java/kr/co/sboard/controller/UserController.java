@@ -28,10 +28,8 @@ public class UserController {
     private final AppInfo appinfo;
 
     @GetMapping("/user/login")
-    public String login(@ModelAttribute("success") String success, Model model){
+    public String login(@ModelAttribute("success") String success){
         // 매개변수 success에 ModelAttribute 선언으로 View참조할 수 있음
-
-        model.addAttribute(appinfo);
 
         return "/user/login";
     }
@@ -56,7 +54,9 @@ public class UserController {
     }
 
     @GetMapping("/user/findIdResult")
-    public String findIdResult(){
+    public String findIdResult(String name, Model model){
+        UserDTO userDTO = userService.selectUser(name);
+        model.addAttribute(userDTO);
         return "/user/findIdResult";
     }
 
@@ -142,7 +142,7 @@ public class UserController {
     // 이메일 인증 코드 검사
     @ResponseBody
     @GetMapping("/email/{code}")
-    public ResponseEntity<?> checkEmail(HttpSession session, @PathVariable("code")  String code){
+    public ResponseEntity<?> checkEmail(HttpSession session, @PathVariable("code") String code){
 
         String sessionCode = (String) session.getAttribute("code");
 

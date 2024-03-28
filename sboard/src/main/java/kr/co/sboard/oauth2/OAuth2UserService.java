@@ -1,7 +1,8 @@
-package kr.co.oauth.oauthtest.oauth2;
+package kr.co.sboard.oauth2;
 
-import kr.co.oauth.oauthtest.entity.User;
-import kr.co.oauth.oauthtest.repository.UserRepository;
+import kr.co.sboard.entity.User;
+import kr.co.sboard.repository.UserRepository;
+import kr.co.sboard.security.MyUserDetails;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.oauth2.client.userinfo.DefaultOAuth2UserService;
@@ -10,7 +11,6 @@ import org.springframework.security.oauth2.core.OAuth2AuthenticationException;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 
-import java.security.Provider;
 import java.util.Map;
 import java.util.Optional;
 
@@ -35,35 +35,32 @@ public class OAuth2UserService extends DefaultOAuth2UserService {
         Map<String, Object> attributes = oauth2User.getAttributes();
         log.info("loadUser...5" + attributes);
 
-        KakaoInfo kakaoInfo = new KakaoInfo(attributes);
-
         /*
         if(provider.equals("kakao")){
         }else if(provider.equals("google")){
         }*/
 
-        // 회원가입 처리
+        // 사용자 확인
         String email = (String) attributes.get("email");
+        String uid = email.substring(0,email.lastIndexOf("@"));
         String name = (String) attributes.get("name");
 
-        // 사용자 확인
-        Optional<User> optUser = userRepository.findById(email);
 
-        User user = null;
+        User user = userRepository.findById(uid)
+                                        .orElse(User.builder()
+                                        .uid(email)
+                                        .email(email)
+                                        .name(name)
+                                        .role("USER")
+                                        .nick(name)
+                                        .provider(provider).build());
 
-        // 가입이 안되어 있으면
-        if(optUser.isEmpty()){
-            // 회원가입
-            user = User.builder()
-                    .uid(email)
-                    .name(name)
-                    .provider(provider).build();
+        // 저장 or 수정
+        userRepository.save(user);
 
-            userRepository.save(user);
-
-        }else{
-            user = optUser.get();
-        }
-        return user;
+        // SecurityContextHolder principal(사용자 인증 객체로 지정)
+        return MyUserDetails.builder()
+                .user(user)
+                .build();
     }
 }

@@ -12,12 +12,14 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.Banner;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.List;
 import java.util.Optional;
@@ -54,13 +56,20 @@ public class ArticleController {
         return "/article/list";
     }
 
+    // 여기 바꿈
     @GetMapping("/article/write")
-    public String write(Model model, String cate){
+    public String write(Model model, String cate, PageRequestDTO pageRequestDTO){
+
+        PageResponseDTO pageResponseDTO = PageResponseDTO.builder()
+                                                        .pageRequestDTO(pageRequestDTO)
+                                                        .build();
+        model.addAttribute(pageResponseDTO);
+
         return "/article/write";
     }
 
     @PostMapping("/article/write")
-    public String write(HttpServletRequest req, ArticleDTO articleDTO){
+    public String write(HttpServletRequest req, ArticleDTO articleDTO, @RequestPart String cate, RedirectAttributes redirectAttributes){
         /*
             글작성을 테스트할 때는 로그인 해야 하기 때문에
             SecurityConfig 인가 설정 수정할것
@@ -69,16 +78,22 @@ public class ArticleController {
         String regip = req.getRemoteAddr();
         articleDTO.setRegip(regip);
         log.info(articleDTO.toString());
+        log.info("cate:" + cate);
 
         articleService.insertArticle(articleDTO);
 
+        redirectAttributes.addAttribute("cate", cate);
         return "redirect:/article/list";
     }
 
+    // 여기 바꿈
     @GetMapping("/article/view")
-    public String view(Model model, String cate, int no){
+    public String view(Model model, String cate, ArticleDTO articleDTO){
 
-        ArticleDTO articleDTO = articleService.findById(no);
+        articleDTO.setCate(cate);
+        
+        articleDTO = articleService.findById(articleDTO.getNo());
+
         model.addAttribute(articleDTO);
 
         return "/article/view";

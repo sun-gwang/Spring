@@ -28,7 +28,7 @@
         <div class="card-body">
             <form name="formWrite" th:action="@{/article/write}" method="post" enctype="multipart/form-data">
                 <input type="hidden" name="writer" th:value="${#authentication.principal.user.uid}">
-                <input type="hidden" name="cate" th:value="${cate}">
+                <input type="text" name="cate" th:value="${pageResponseDTO.cate}">
                 <div class="mb-3">
                     <label for="exampleFormControlInput1" class="form-label">글 제목</label>
                     <input type="text" class="form-control" id="exampleFormControlInput1" name="title" placeholder="제목 입력">
