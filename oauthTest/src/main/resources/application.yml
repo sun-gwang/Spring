@@ -1,0 +1,84 @@
+logging:
+    file:
+        name: logs/oauthTest.log
+    level:
+        jdbc:
+            connection: info
+            resultsettable: info
+            sqlonly: info
+            sqltiming: info
+        root: info
+
+server:
+    port: 8080
+    servlet:
+        context-path: /oauthTest
+
+spring:
+    application:
+        name: oauth
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: Abcd!1234
+        url: jdbc:mysql://127.0.0.1:3306/studydb
+        username: kc5353
+    devtools:
+        livereload:
+            enabled: true
+        restart:
+            enabled: false
+    thymeleaf:
+        prefix: classpath:/templates
+
+    jpa:
+        database: mysql
+        hibernate:
+            ddl-auto: update
+            naming:
+                physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+        properties:
+            hibernate:
+                format_sql: true
+                show_sql: true
+    servlet:
+        multipart:
+            location: uploads/
+            max-file-size: 10MB
+
+    security:
+      oauth2:
+        client:
+            provider:
+              kakao:
+                  # 인가 코드 받기
+                  authorization-uri: https://kauth.kakao.com/oauth/authorize
+                  user-name-attribute: id
+                  # 토큰 코드 받기
+                  token-uri: https://kauth.kakao.com/oauth/token
+                  # 사용자 정보 가져오기
+                  user-info-uri: https://kapi.kakao.com/v2/user/me
+              google:
+                authorization-uri: https://accounts.google.com/o/oauth2/v2/auth?prompt=consent
+
+            registration:
+                kakao:
+                  client-name: kakao
+                  authorization-grant-type: authorization_code
+
+                  # 카카오 > 내 애플리케이션 > 카카오 로그인 > 등록된 Redirect URI 사용
+                  redirect-uri: http://localhost:8080/oauthTest/login/oauth2/code/kakao
+                  client-id: 5d395917afb3f84f1bde6ebcbd12c3cf
+                  # 카카오 > 내 애플리케이션 > 카카오로그인 > 보안 > Client Secret
+                  client-secret: 8U4ZM3EKyAlXR3BDQ3wpaozimhKNE4Nt
+                  client-authentication-method: client_secret_post
+                  scope:
+                      - profile_nickname
+                      - profile_image
+
+                google:
+                 client-id: 14049678678-iegjc0ca1k4urdbfimqmch8m2oebcua3.apps.googleusercontent.com
+                 client-secret: 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
+                 redirect-uri: http://localhost:8080/oauthTest/login/oauth2/code/google
+                 scope:
+                     - email
+                     - profile
