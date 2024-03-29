@@ -23,23 +23,62 @@
             const btnGood = document.getElementsByClassName('btnGood')[0];
             const btnHate = document.getElementsByClassName('btnHate')[0];
 
-            btnGood.onclick = async function(){
-                const goodSpan = document.getElementById('goodValue');
-                const goodValue = goodSpan.value;
-                console.log(goodValue);
+            // 좋아요
+            function setupGoodCount(noValue){
+
+                const goodSpan = document.getElementById('goodSpan');
+
+                let currentValue = localStorage.getItem("goodCounter" + noValue)
+
+                if(!currentValue){
+                    currentValue = 0;
+                    localStorage.setItem("goodCounter" + no, currentValue);
+                }
+
+                goodSpan.textContent = currentValue;
+
+                function incrementValue(){
+                    currentValue++;
+                    localStorage.setItem("goodCounter" + no, currentValue);
+                    goodSpan.textContent = currentValue;
+
+                }
+
+                btnGood.addEventListener('click', incrementValue);
             }
 
-            btnHate.onclick = async function(){
-                alert('CC');
+            // 싫어요
+            function setupHateCount(noValue){
+                const hateSpan = document.getElementById('hateSpan');
+                let currentValue = localStorage.getItem("hateCounter" + noValue)
+
+                if(!currentValue){
+                    currentValue = 0;
+                    localStorage.setItem("hateCounter" + no, currentValue);
+                }
+
+                hateSpan.textContent = currentValue;
+
+                function incrementValue(){
+                    currentValue++;
+                    localStorage.setItem("hateCounter" + no, currentValue);
+                    hateSpan.textContent = currentValue;
+                }
+                btnHate.addEventListener('click', incrementValue);
+
             }
+            // 상단 <script> 선언 태그에 th:inline="javascript" 속성 추가
+            const no = [[${articleDTO.no}]]
+
+            let noValue = parseInt(no);
+            setupGoodCount(noValue);
+            setupHateCount(noValue);
+
 
             //////////////////////////////////////////////////////////////////////////
             // 댓글 불러오기
             //////////////////////////////////////////////////////////////////////////
             const commentList = document.getElementById('commentList');
-
-            // 상단 <script> 선언 태그에 th:inline="javascript" 속성 추가
-            const no = [[${articleDTO.no}]]
 
             // fetchGet 함수는 await 비동기 실행되기 때문에 이벤트 핸들러 function 앞에 async추가
             // 페이지 로드 후 바로 댓글목록 데이터를 요청하기 보다는 2초정도 뒤에 요청하면 좀 더 안정적
@@ -274,12 +313,12 @@
 
     <button type="button" class="btn btn-info position-relative btnGood">
             좋아요👍
-      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info" id="goodValue"> 1 </span>
+      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-info" id="goodSpan"> 1 </span>
     </button>
 
     <button type="button" class="btn btn-danger position-relative btnHate">
             싫어요👎
-      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger"> 0 </span>
+      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger" id="hateSpan"> 0 </span>
 
     </button>
 
